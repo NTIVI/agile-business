@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор стоимости — Agile Business</title>
+    <meta name="description" content="Рассчитайте стоимость консалтинговых услуг онлайн. 5 направлений экспертизы. Agile Business.">
+    <meta name="keywords" content="калькулятор стоимости консалтинга, стоимость бизнес консалтинга, расчёт услуг">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Калькулятор стоимости — Agile Business">
+    <meta property="og:description" content="Рассчитайте предварительную стоимость консалтинговых услуг">
+    <meta property="og:image" content="https://agile-business-pro.com/assets/logo.png">
+    <meta property="og:url" content="https://agile-business-pro.com/calculator">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Калькулятор стоимости — Agile Business">
+    <meta name="twitter:description" content="Рассчитайте предварительную стоимость консалтинговых услуг">
+    <meta name="twitter:image" content="https://agile-business-pro.com/assets/logo.png">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://agile-business-pro.com/calculator">
+    <link rel="alternate" hreflang="ru" href="https://agile-business-pro.com/calculator?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://agile-business-pro.com/calculator?lang=en">
+    <link rel="alternate" hreflang="ka" href="https://agile-business-pro.com/calculator?lang=ka">
+    <link rel="alternate" hreflang="hy" href="https://agile-business-pro.com/calculator?lang=hy">
+    <link rel="alternate" hreflang="bg" href="https://agile-business-pro.com/calculator?lang=bg">
+    <link rel="alternate" hreflang="x-default" href="https://agile-business-pro.com/calculator">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="ab-whatsapp-phone" content="">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72">
+            </a>
+            <ul class="nav__links">
+                <li><a href="/about" class="nav__link" data-hover data-i18n="nav_about">О нас</a></li>
+                <li><a href="/works" class="nav__link" data-hover data-i18n="nav_works">Наши работы</a></li>
+                <li><a href="/articles" class="nav__link" data-hover data-i18n="nav_articles">Статьи</a></li>
+                <li><a href="/#services" class="nav__link" data-hover data-i18n="nav_services">Услуги</a></li>
+                <li><a href="/#approach" class="nav__link" data-hover data-i18n="nav_approach">Подход</a></li>
+                <li><a href="/#contact" class="nav__link" data-hover data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" data-hover aria-label="Theme">
+                    <svg class="theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown__current" data-hover>RU</button>
+                    <ul class="lang-dropdown__list"></ul>
+                </div>
+            </div>
+            <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu__links">
+            <li><a href="/about" class="mobile-menu__link" data-i18n="nav_about">О нас</a></li>
+            <li><a href="/works" class="mobile-menu__link" data-i18n="nav_works">Наши работы</a></li>
+            <li><a href="/articles" class="mobile-menu__link" data-i18n="nav_articles">Статьи</a></li>
+            <li><a href="/#services" class="mobile-menu__link" data-i18n="nav_services">Услуги</a></li>
+            <li><a href="/#approach" class="mobile-menu__link" data-i18n="nav_approach">Подход</a></li>
+            <li><a href="/#contact" class="mobile-menu__link" data-i18n="nav_contact">Контакты</a></li>
+        </ul>
+    </div>
+
+    <!-- Back Arrow -->
+    <a href="/" class="page-back" data-hover aria-label="Назад">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </a>
+
+    <main class="calc-page with-page-back">
+        <div class="calc-page__container">
+            <div class="calc-page__header">
+                <span class="section-label" data-i18n="calc_page_label">Калькулятор</span>
+                <h1 class="section-title" data-i18n="calc_subtitle">Рассчитайте стоимость услуг</h1>
+            </div>
+
+            <!-- Progress -->
+            <div class="calc-progress" id="calcProgress">
+                <div class="calc-progress__step active"><div class="calc-progress__fill"></div></div>
+                <div class="calc-progress__step"><div class="calc-progress__fill"></div></div>
+                <div class="calc-progress__step"><div class="calc-progress__fill"></div></div>
+                <div class="calc-progress__step"><div class="calc-progress__fill"></div></div>
+                <div class="calc-progress__step"><div class="calc-progress__fill"></div></div>
+            </div>
+
+            <!-- Step 1: Service Selection -->
+            <div class="calc-step active" data-step="1" id="step1">
+                <h2 class="calc-step__title" data-i18n="calc_step_1_title">Выберите направление</h2>
+                <p class="calc-step__subtitle" data-i18n="calc_step_1_sub">Какая сфера консалтинга вас интересует?</p>
+                <div class="calc-options" id="serviceOptions">
+                    <div class="calc-option" data-value="management" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V9l7-5 7 5v11"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_1_title">Управление и Стратегия</div>
+                    </div>
+                    <div class="calc-option" data-value="investment" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h5l3-9 4 18 3-9h5"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_2_title">Инвестиции и Оценка</div>
+                    </div>
+                    <div class="calc-option" data-value="creative" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_3_title">Креатив</div>
+                    </div>
+                    <div class="calc-option" data-value="analytics" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_4_title">Аналитика и Данные</div>
+                    </div>
+                    <div class="calc-option" data-value="it" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_5_title">ИТ и Разработка</div>
+                    </div>
+                </div>
+                <div class="calc-nav">
+                    <div></div>
+                    <button class="btn btn--primary" id="nextStep1" data-hover disabled>
+                        <span data-i18n="calc_next">Далее</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Company Size -->
+            <div class="calc-step" data-step="2" id="step2">
+                <h2 class="calc-step__title" data-i18n="calc_step_2_title">Размер компании</h2>
+                <p class="calc-step__subtitle" data-i18n="calc_step_2_sub">Укажите масштаб вашего бизнеса</p>
+                <div class="calc-options calc-options--cols-3" id="sizeOptions">
+                    <div class="calc-option" data-value="small" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/></svg></div>
+                        <div class="calc-option__name" data-i18n="size_small">Малый бизнес</div>
+                        <div class="calc-option__desc" data-i18n="size_small_desc">До 50 сотрудников</div>
+                    </div>
+                    <div class="calc-option" data-value="medium" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M9 21V11h6v10"/><path d="M5 21V7l7-4 7 4v14"/></svg></div>
+                        <div class="calc-option__name" data-i18n="size_medium">Средний бизнес</div>
+                        <div class="calc-option__desc" data-i18n="size_medium_desc">50–250 сотрудников</div>
+                    </div>
+                    <div class="calc-option" data-value="large" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M13 21V3l6 3v15"/></svg></div>
+                        <div class="calc-option__name" data-i18n="size_large">Крупный бизнес</div>
+                        <div class="calc-option__desc" data-i18n="size_large_desc">Более 250 сотрудников</div>
+                    </div>
+                </div>
+                <div class="calc-nav">
+                    <button class="btn btn--ghost" id="prevStep2" data-hover><span data-i18n="calc_prev">Назад</span></button>
+                    <button class="btn btn--primary" id="nextStep2" data-hover disabled><span data-i18n="calc_next">Далее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+            </div>
+
+            <!-- Step 3: Complexity -->
+            <div class="calc-step" data-step="3" id="step3">
+                <h2 class="calc-step__title" data-i18n="calc_step_3_title">Уровень сложности</h2>
+                <p class="calc-step__subtitle" data-i18n="calc_step_3_sub">Выберите подходящий пакет услуг</p>
+                <div class="calc-options calc-options--cols-3" id="complexityOptions">
+                    <div class="calc-option" data-value="basic" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div>
+                        <div class="calc-option__name" data-i18n="complexity_basic">Базовый</div>
+                        <div class="calc-option__desc" data-i18n="complexity_basic_desc">Консультации и рекомендации</div>
+                    </div>
+                    <div class="calc-option" data-value="standard" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+                        <div class="calc-option__name" data-i18n="complexity_standard">Стандарт</div>
+                        <div class="calc-option__desc" data-i18n="complexity_standard_desc">Разработка и внедрение</div>
+                    </div>
+                    <div class="calc-option" data-value="premium" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+                        <div class="calc-option__name" data-i18n="complexity_premium">Премиум</div>
+                        <div class="calc-option__desc" data-i18n="complexity_premium_desc">Полное сопровождение</div>
+                    </div>
+                </div>
+                <div class="calc-nav">
+                    <button class="btn btn--ghost" id="prevStep3" data-hover><span data-i18n="calc_prev">Назад</span></button>
+                    <button class="btn btn--primary" id="nextStep3" data-hover disabled><span data-i18n="calc_next">Далее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+            </div>
+
+            <!-- Step 4: Duration -->
+            <div class="calc-step" data-step="4" id="step4">
+                <h2 class="calc-step__title" data-i18n="calc_step_4_title">Срок проекта</h2>
+                <p class="calc-step__subtitle" data-i18n="calc_step_4_sub">Предполагаемая длительность сотрудничества</p>
+                <div class="calc-options calc-options--cols-3" id="durationOptions">
+                    <div class="calc-option" data-value="short" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+                        <div class="calc-option__name" data-i18n="dur_1">1–3 месяца</div>
+                        <div class="calc-option__desc" data-i18n="dur_1_desc">Краткосрочный проект</div>
+                    </div>
+                    <div class="calc-option" data-value="medium" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+                        <div class="calc-option__name" data-i18n="dur_2">3–6 месяцев</div>
+                        <div class="calc-option__desc" data-i18n="dur_2_desc">Среднесрочный проект</div>
+                    </div>
+                    <div class="calc-option" data-value="long" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/><path d="M2 12h2"/><path d="M20 12h2"/></svg></div>
+                        <div class="calc-option__name" data-i18n="dur_3">6–12 месяцев</div>
+                        <div class="calc-option__desc" data-i18n="dur_3_desc">Долгосрочное сотрудничество</div>
+                    </div>
+                </div>
+                <div class="calc-nav">
+                    <button class="btn btn--ghost" id="prevStep4" data-hover><span data-i18n="calc_prev">Назад</span></button>
+                    <button class="btn btn--primary" id="nextStep4" data-hover disabled><span data-i18n="calc_next">Далее</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+                </div>
+            </div>
+
+            <!-- Step 5: Description -->
+            <div class="calc-step" data-step="5" id="step5">
+                <h2 class="calc-step__title" data-i18n="calc_step_5_title">Опишите задачу</h2>
+                <p class="calc-step__subtitle" data-i18n="calc_step_5_sub">Расскажите подробнее о вашем проекте</p>
+                <div id="itCriteriaWrap" style="display:none;margin:12px 0 18px;padding:16px;border:1px solid var(--border);border-radius:16px;background:var(--bg-tertiary)">
+                    <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+                        <div style="color:var(--text-heading);font-weight:700" id="itCriteriaTitle">Подуслуги</div>
+                        <div style="color:var(--text-muted);font-size:12px" id="itCriteriaSum"></div>
+                    </div>
+                    <div style="color:var(--text-muted);font-size:12.5px;margin:6px 0 12px">Отметьте конкретные услуги — мы учтём их в расчёте и согласуем состав работ.</div>
+                    <div id="itCriteriaList"></div>
+                </div>
+                <div id="calcValidation" class="calc-validation" style="display:none"></div>
+                <div class="calc-smart-context" id="smartContext" style="display:none">
+                    <div class="calc-smart-context__hint" id="smartHint"></div>
+                </div>
+                <textarea class="calc-textarea" id="calcDescription" data-i18n="calc_textarea_placeholder" placeholder="Опишите вашу задачу, цели и ожидания..." rows="6"></textarea>
+                <div class="calc-smart-feedback" id="smartFeedback" style="display:none">
+                    <span class="calc-smart-feedback__icon"></span>
+                    <span class="calc-smart-feedback__text"></span>
+                </div>
+                <div class="calc-nav">
+                    <button class="btn btn--ghost" id="prevStep5" data-hover><span data-i18n="calc_prev">Назад</span></button>
+                    <button class="btn btn--primary" id="calcSubmit" data-hover>
+                        <span data-i18n="calc_calculate">Рассчитать</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Result -->
+            <div class="calc-step" data-step="result" id="stepResult">
+                <div class="calc-result">
+                    <span class="section-label" data-i18n="calc_result_title">Предварительная оценка</span>
+                    <div class="calc-result__price" id="resultPrice">— &#8381; <small data-i18n="calc_per_month">/ мес</small></div>
+                    <p class="calc-result__subtitle" data-i18n="calc_result_subtitle">Итоговая стоимость может отличаться после детального анализа</p>
+                    <div class="calc-result__details" id="resultDetails">
+                        <div><div class="calc-result__detail-label" data-i18n="res_service">Услуга</div><div class="calc-result__detail-value" id="resService">—</div></div>
+                        <div><div class="calc-result__detail-label" data-i18n="res_size">Масштаб</div><div class="calc-result__detail-value" id="resSize">—</div></div>
+                        <div><div class="calc-result__detail-label" data-i18n="res_complexity">Пакет</div><div class="calc-result__detail-value" id="resComplexity">—</div></div>
+                        <div><div class="calc-result__detail-label" data-i18n="res_duration">Срок</div><div class="calc-result__detail-value" id="resDuration">—</div></div>
+                    </div>
+                    <button class="btn btn--primary btn--full" id="showContactForm" data-hover>
+                        <span data-i18n="calc_contact_title">Оставьте контакты</span>
+                    </button>
+                    <button class="btn btn--ghost btn--full" id="downloadPdf" data-hover style="margin-top:12px">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span data-i18n="calc_download_pdf">Скачать PDF</span>
+                    </button>
+                </div>
+
+                <!-- Contact Form after calculator -->
+                <div class="calc-contact" id="calcContact">
+                    <h3 class="calc-step__title" data-i18n="calc_contact_title">Оставьте контакты</h3>
+                    <p class="calc-step__subtitle" data-i18n="calc_contact_sub">Мы свяжемся с вами для детального обсуждения</p>
+                    <form class="calc-contact__form" id="calcContactForm">
+                        <input type="text" name="name" data-i18n="contact_name" placeholder="Ваше имя" required aria-label="Ваше имя" autocomplete="name">
+                        <input type="email" name="email" data-i18n="contact_email" placeholder="Email" required aria-label="Email" autocomplete="email">
+                        <input type="tel" name="phone" data-i18n="contact_phone" placeholder="Телефон" aria-label="Телефон" autocomplete="tel">
+                        <input type="text" name="company" data-i18n="contact_company" placeholder="Компания" aria-label="Компания" autocomplete="organization">
+                        <button type="submit" class="btn btn--primary btn--full" data-hover>
+                            <span data-i18n="calc_contact_send">Отправить</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand"><img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72" loading="lazy" decoding="async"></div>
+                <div class="footer__links">
+                    <a href="/about" data-hover data-i18n="nav_about">О нас</a>
+                    <a href="/works" data-hover data-i18n="nav_works">Наши работы</a>
+                    <a href="/articles" data-hover data-i18n="nav_articles">Статьи</a>
+                    <a href="/#services" data-hover data-i18n="nav_services">Услуги</a>
+                    <a href="/#approach" data-hover data-i18n="nav_approach">Подход</a>
+                    <a href="/#contact" data-hover data-i18n="nav_contact">Контакты</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p data-i18n="footer_rights">&copy; 2026 Agile Business. Все права защищены.</p>
+                <a href="/privacy" class="footer__privacy-link" data-i18n="footer_privacy">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fab-hub" id="fabHub">
+        <button class="fab-hub__trigger" id="fabTrigger" aria-label="Menu">
+            <svg class="fab-hub__icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="fab-hub__icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="fab-hub__items" id="fabItems">
+            <a href="https://t.me/agilebusiness" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--tg" title="Telegram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.28-.02-.12.03-2.02 1.28-5.69 3.77-.54.37-1.03.55-1.47.54-.48-.01-1.41-.27-2.1-.5-.85-.28-1.52-.43-1.46-.91.03-.25.38-.51 1.05-.78 4.12-1.79 6.87-2.97 8.26-3.54 3.93-1.62 4.75-1.9 5.28-1.91.12 0 .37.03.54.18.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--wa" data-i18n="fab_whatsapp" title="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/i18n.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/calculator.js" defer></script>
+    <script src="/js/analytics.js" defer></script>
+</body>
+</html>

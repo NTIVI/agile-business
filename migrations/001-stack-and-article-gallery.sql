@@ -1,0 +1,7 @@
+-- Portfolio / articles: stack tags + article gallery (second carousel image).
+-- The Node server adds these columns automatically on startup if missing.
+-- To apply manually (older MySQL):
+--
+-- ALTER TABLE project_locales ADD COLUMN stack_json MEDIUMTEXT NULL;
+-- ALTER TABLE article_locales ADD COLUMN gallery_json MEDIUMTEXT NULL;
+-- ALTER TABLE article_locales ADD COLUMN stack_json MEDIUMTEXT NULL;

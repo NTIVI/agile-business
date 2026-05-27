@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agile Business — профессиональный бизнес-консалтинг в 5 направлениях. Управление, инвестиции, креатив и маркетинг, аналитика, IT-разработка для роста вашего бизнеса.">
+    <meta name="keywords" content="бизнес-консалтинг, стратегия, аналитика, IT-консалтинг, маркетинг, инвестиции, креатив, Agile Business">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Agile Business — бизнес-консалтинг нового поколения">
+    <meta property="og:description" content="5 направлений экспертизы для трансформации и масштабирования вашего бизнеса">
+    <meta property="og:image" content="https://agile-business-pro.com/assets/logo.png">
+    <link rel="canonical" href="https://agile-business-pro.com/">
+    <title>Agile Business — Бизнес-консалтинг нового поколения</title>
+    <meta property="og:url" content="https://agile-business-pro.com/">
+    <meta property="og:site_name" content="Agile Business">
+    <meta property="og:locale" content="ru_RU">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agile Business — Бизнес-консалтинг">
+    <meta name="twitter:description" content="5 направлений экспертизы: управление, инвестиции, креатив, аналитика, IT">
+    <meta name="twitter:image" content="https://agile-business-pro.com/assets/logo.png">
+    <meta name="ab-whatsapp-phone" content="">
+    <meta name="robots" content="index, follow">
+    <link rel="alternate" hreflang="ru" href="https://agile-business-pro.com/?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://agile-business-pro.com/?lang=en">
+    <link rel="alternate" hreflang="ka" href="https://agile-business-pro.com/?lang=ka">
+    <link rel="alternate" hreflang="hy" href="https://agile-business-pro.com/?lang=hy">
+    <link rel="alternate" hreflang="bg" href="https://agile-business-pro.com/?lang=bg">
+    <link rel="alternate" hreflang="x-default" href="https://agile-business-pro.com/">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="apple-touch-icon" href="/assets/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="preload" href="/css/style.css?v=20260415-hero" as="style">
+    <link rel="preload" href="/js/main.js" as="script">
+    <link rel="preload" href="/assets/logo.png" as="image">
+    <link rel="stylesheet" href="/css/style.css?v=20260415-hero">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation (единый блок на всём сайте) -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72">
+            </a>
+            <ul class="nav__links">
+                <li><a href="/about" class="nav__link" data-hover data-i18n="nav_about">О нас</a></li>
+                <li><a href="/works" class="nav__link" data-hover data-i18n="nav_works">Наши работы</a></li>
+                <li><a href="/articles" class="nav__link" data-hover data-i18n="nav_articles">Статьи</a></li>
+                <li><a href="/#services" class="nav__link" data-hover data-i18n="nav_services">Услуги</a></li>
+                <li><a href="/#approach" class="nav__link" data-hover data-i18n="nav_approach">Подход</a></li>
+                <li><a href="/#contact" class="nav__link" data-hover data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" data-hover aria-label="Theme">
+                    <svg class="theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown__current" data-hover>RU</button>
+                    <ul class="lang-dropdown__list"></ul>
+                </div>
+                <a href="/calculator" class="nav__cta" data-hover data-i18n="nav_cta">Рассчитать проект</a>
+            </div>
+            <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu__links">
+            <li><a href="/about" class="mobile-menu__link" data-i18n="nav_about">О нас</a></li>
+            <li><a href="/works" class="mobile-menu__link" data-i18n="nav_works">Наши работы</a></li>
+            <li><a href="/articles" class="mobile-menu__link" data-i18n="nav_articles">Статьи</a></li>
+            <li><a href="/#services" class="mobile-menu__link" data-i18n="nav_services">Услуги</a></li>
+            <li><a href="/#approach" class="mobile-menu__link" data-i18n="nav_approach">Подход</a></li>
+            <li><a href="/#contact" class="mobile-menu__link" data-i18n="nav_contact">Контакты</a></li>
+        </ul>
+        <a href="/calculator" class="mobile-menu__cta" data-i18n="nav_cta">Рассчитать проект</a>
+    </div>
+
+    <!-- ======== HERO ======== -->
+    <section class="hero" id="hero">
+        <div class="hero__backdrop" aria-hidden="true">
+            <canvas class="hero__particle-grid" id="heroParticleGrid"></canvas>
+            <div class="hero-bg">
+                <div class="hero-gradient hero-gradient-1"></div>
+                <div class="hero-gradient hero-gradient-2"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="hero__content">
+            <div class="hero__badge reveal">
+                <span class="hero__badge-dot"></span>
+                <span data-i18n="hero_badge">Бизнес-консалтинг нового поколения</span>
+            </div>
+            <h1 class="hero__title reveal">
+                <span class="hero__title-line" data-i18n="hero_title_1">Решение</span>
+                <span class="hero__title-line hero__title-line--accent" data-i18n="hero_title_2">под задачи</span>
+                <span class="hero__title-line" data-i18n="hero_title_3">бизнеса</span>
+            </h1>
+            <p class="hero__subtitle reveal" data-i18n="hero_subtitle">
+                5 направлений экспертизы для трансформации и масштабирования вашего бизнеса
+            </p>
+            <div class="hero__actions reveal">
+                <a href="#contact" class="btn btn--primary" data-hover>
+                    <span data-i18n="hero_btn_discuss">Обсудить проект</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="/calculator" class="btn btn--ghost" data-hover>
+                    <span data-i18n="nav_cta">Рассчитать проект</span>
+                </a>
+                <a href="/works" class="btn btn--ghost" data-hover>
+                    <span data-i18n="nav_works">Наши работы</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== ABOUT ======== -->
+    <section class="about" id="about">
+        <div class="about__container">
+            <div class="about__left">
+                <span class="section-label reveal" data-i18n="nav_about">О нас</span>
+                <h2 class="section-title reveal">
+                    <span data-i18n="about_title_1">Agile подход</span><br>
+                    <span class="text-accent" data-i18n="about_title_2">к вашему бизнесу</span>
+                </h2>
+                <p class="about__text reveal" data-i18n="about_text">
+                    Мы — команда экспертов, объединяющая аналитику, стратегию и технологии для решения самых сложных бизнес-задач. Наш подход основан на гибкости, данных и глубоком понимании рынка.
+                </p>
+                <div class="about__stats reveal">
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="5">0</span>
+                        <span class="about__stat-label" data-i18n="about_stat_1_label">направлений<br>экспертизы</span>
+                    </div>
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="20" data-suffix=" +">0</span>
+                        <span class="about__stat-label" data-i18n="about_stat_2_label">успешных<br>проектов</span>
+                    </div>
+                    <div class="about__stat">
+                        <span class="about__stat-number" data-count="98" data-suffix="%">0</span>
+                        <span class="about__stat-label" data-i18n="about_stat_3_label">клиентов<br>рекомендуют</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about__right reveal">
+                <div class="about__3d-card" id="aboutCard">
+                        <div class="about__card-inner">
+                        <div class="about__card-pattern"></div>
+                        <!-- Marketing badge at top -->
+                        <div class="about__card-top">
+                            <span class="about__card-badge" data-i18n="about_card_badge">Маркетинг · Лиды · Рост</span>
+                            <div class="about__card-metric">
+                                <span class="about__card-metric-val">×2.5</span>
+                                <span class="about__card-metric-label" data-i18n="about_card_metric_label">ROI проектов</span>
+                            </div>
+                        </div>
+                        <div class="about__card-content">
+                            <div class="about__card-icon-row">
+                                <div class="about__card-icon">
+                                    <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                </div>
+                            </div>
+                            <h3 data-i18n="about_card_title">Комплексный консалтинг</h3>
+                            <p data-i18n="about_card_text">От стратегии до реализации — полный цикл сопровождения бизнеса</p>
+                            <p class="about__card-marketing" data-i18n="about_card_marketing">Выстроим воронку продаж, SEO и brand-стратегию под ваш бизнес</p>
+                            <div class="about__card-features">
+                                <div class="about__card-feat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span data-i18n="about_feat_1">Аудит и диагностика</span>
+                                </div>
+                                <div class="about__card-feat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span data-i18n="about_feat_2">Стратегическое планирование</span>
+                                </div>
+                                <div class="about__card-feat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span data-i18n="about_feat_3">Внедрение и сопровождение</span>
+                                </div>
+                                <div class="about__card-feat">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                                    <span data-i18n="about_feat_4">Масштабирование результатов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SERVICES ======== -->
+    <section class="services" id="services">
+        <div class="services__container">
+            <div class="services__header services__header--static">
+                <span class="section-label" data-i18n="srv_label">Экспертиза</span>
+                <h2 class="section-title">
+                    <span data-i18n="srv_title_1">5 направлений</span><br>
+                    <span class="text-accent" data-i18n="srv_title_2">для вашего роста</span>
+                </h2>
+                <p class="services__desc" data-i18n="srv_desc">Каждое направление — это команда специалистов с глубокой экспертизой и проверенной методологией</p>
+            </div>
+            <div class="services__grid-wrap">
+            <div class="services__grid services__grid--editorial">
+                <div class="service-card" data-hover data-service="management" tabindex="0" role="button" aria-expanded="false">
+                    <div class="service-card__number">01</div>
+                    <div class="service-card__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V9l7-5 7 5v11"/><path d="M9 20v-5h6v5"/></svg></div>
+                    <h3 class="service-card__title" data-i18n="srv_1_title">Управление и Стратегия</h3>
+                    <p class="service-card__desc" data-i18n="srv_1_desc">Определение долгосрочных целей, планирование проектов, оптимизация бизнес-процессов, управление изменениями и цифровая трансформация</p>
+                </div>
+                <div class="service-card" data-hover data-service="investment" tabindex="0" role="button" aria-expanded="false">
+                    <div class="service-card__number">02</div>
+                    <div class="service-card__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h5l3-9 4 18 3-9h5"/></svg></div>
+                    <h3 class="service-card__title" data-i18n="srv_2_title">Инвестиции и Оценка</h3>
+                    <p class="service-card__desc" data-i18n="srv_2_desc">Привлечение финансирования, оценка бизнеса, Due Diligence, разработка бизнес-планов и инвестиционных предложений</p>
+                </div>
+                <div class="service-card" data-hover data-service="creative" tabindex="0" role="button" aria-expanded="false">
+                    <div class="service-card__number">03</div>
+                    <div class="service-card__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg></div>
+                    <h3 class="service-card__title" data-i18n="srv_3_title">Креатив</h3>
+                    <p class="service-card__desc" data-i18n="srv_3_desc">Маркетинг (основное направление), продажи и развитие клиентов, дизайн и брендинг, кадры и организации (HR)</p>
+                </div>
+                <div class="service-card" data-hover data-service="analytics" tabindex="0" role="button" aria-expanded="false">
+                    <div class="service-card__number">04</div>
+                    <div class="service-card__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+                    <h3 class="service-card__title" data-i18n="srv_4_title">Аналитика и Данные</h3>
+                    <p class="service-card__desc" data-i18n="srv_4_desc">Бизнес-аналитика, BI-системы, прогнозирование, визуализация данных, оценка рисков и data-driven управление</p>
+                </div>
+                <div class="service-card" data-hover data-service="it" tabindex="0" role="button" aria-expanded="false">
+                    <div class="service-card__number">05</div>
+                    <div class="service-card__icon"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg></div>
+                    <h3 class="service-card__title" data-i18n="srv_5_title">ИТ и Разработка</h3>
+                    <p class="service-card__desc" data-i18n="srv_5_desc">ИТ-стратегия, веб- и мобильная разработка, кибербезопасность, облачные решения и системная интеграция</p>
+                </div>
+            </div>
+            <div id="servicesPanel" class="services-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="servicesPanelTitle">
+                <div class="services-panel__clip">
+                    <div class="services-panel__sheet">
+                        <button type="button" class="services-panel__close" aria-label="Закрыть">&times;</button>
+                        <div class="services-panel__content">
+                            <h3 id="servicesPanelTitle" class="services-panel__title"></h3>
+                            <p class="services-panel__text"></p>
+                            <div class="services-panel__items"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== APPROACH ======== -->
+    <section class="approach" id="approach">
+        <div class="approach__container">
+            <div class="approach__header">
+                <span class="section-label reveal" data-i18n="appr_label">Наш подход</span>
+                <h2 class="section-title reveal">
+                    <span data-i18n="appr_title_1">Методология</span><br>
+                    <span class="text-accent" data-i18n="appr_title_2">Agile Business</span>
+                </h2>
+            </div>
+            <div class="approach__steps-wrap">
+            <div class="approach__steps">
+                <div class="approach__step reveal" data-hover data-step="discovery" tabindex="0" role="button" aria-expanded="false">
+                    <div class="approach__step-num">01</div>
+                    <h3 data-i18n="appr_step_1_title">Диагностика</h3>
+                    <p data-i18n="appr_step_1_desc">Глубокий анализ текущего состояния бизнеса, выявление точек роста и узких мест</p>
+                    <span class="approach__step-more" aria-hidden="true">
+                        <span>Подробнее</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+                <div class="approach__step reveal" data-hover data-step="strategy" tabindex="0" role="button" aria-expanded="false">
+                    <div class="approach__step-num">02</div>
+                    <h3 data-i18n="appr_step_2_title">Стратегия</h3>
+                    <p data-i18n="appr_step_2_desc">Разработка дорожной карты с чёткими KPI, сроками и ответственными</p>
+                    <span class="approach__step-more" aria-hidden="true">
+                        <span>Подробнее</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+                <div class="approach__step reveal" data-hover data-step="execution" tabindex="0" role="button" aria-expanded="false">
+                    <div class="approach__step-num">03</div>
+                    <h3 data-i18n="appr_step_3_title">Реализация</h3>
+                    <p data-i18n="appr_step_3_desc">Внедрение решений с постоянным мониторингом и корректировкой курса</p>
+                    <span class="approach__step-more" aria-hidden="true">
+                        <span>Подробнее</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+                <div class="approach__step reveal" data-hover data-step="scale" tabindex="0" role="button" aria-expanded="false">
+                    <div class="approach__step-num">04</div>
+                    <h3 data-i18n="appr_step_4_title">Масштабирование</h3>
+                    <p data-i18n="appr_step_4_desc">Закрепление результатов и выход на новые уровни эффективности</p>
+                    <span class="approach__step-more" aria-hidden="true">
+                        <span>Подробнее</span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </span>
+                </div>
+            </div>
+            <div id="approachPanel" class="approach-panel" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="approachPanelTitle">
+                <div class="approach-panel__clip">
+                    <div class="approach-panel__sheet">
+                        <button type="button" class="approach-panel__close" aria-label="Закрыть">&times;</button>
+                        <div class="approach-panel__content">
+                            <span class="approach-panel__stage"></span>
+                            <h3 id="approachPanelTitle" class="approach-panel__title"></h3>
+                            <p class="approach-panel__text"></p>
+                            <div class="approach-panel__columns">
+                                <div class="approach-panel__col">
+                                    <h4>Что делаем</h4>
+                                    <ul class="approach-panel__items"></ul>
+                                </div>
+                                <div class="approach-panel__col">
+                                    <h4>Результат на выходе</h4>
+                                    <ul class="approach-panel__results"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="approach__marquee" aria-hidden="true">
+        <div class="approach__marquee-track">
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+            <span data-i18n="marquee_1">СТРАТЕГИЯ</span><span>•</span>
+            <span data-i18n="marquee_2">АНАЛИТИКА</span><span>•</span>
+            <span data-i18n="marquee_3">РЕЗУЛЬТАТ</span><span>•</span>
+            <span data-i18n="marquee_4">РОСТ</span><span>•</span>
+            <span data-i18n="marquee_5">ЭФФЕКТИВНОСТЬ</span><span>•</span>
+        </div>
+    </div>
+
+    <!-- ======== CONTACT ======== -->
+    <section class="contact" id="contact">
+        <div class="contact__container">
+            <div class="contact__left">
+                <span class="section-label reveal" data-i18n="contact_label">Контакты</span>
+                <h2 class="section-title reveal">
+                    <span data-i18n="contact_title_1">Начнём</span><br>
+                    <span class="text-accent" data-i18n="contact_title_2">сотрудничество</span>
+                </h2>
+                <p class="contact__text reveal" data-i18n="contact_text">
+                    Оставьте заявку и мы свяжемся с вами для обсуждения вашего проекта в течение 24 часов
+                </p>
+                <div class="contact__info reveal">
+                    <div class="contact__info-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span data-site="email">info@agilebusiness.com</span>
+                    </div>
+                    <div class="contact__info-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span data-site="phone">+7 (963) 617-73-73</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact__right reveal">
+                <form class="contact__form" id="contactForm">
+                    <input type="text" class="contact__input" name="name" data-i18n="contact_name" placeholder="Ваше имя" required aria-label="Ваше имя" autocomplete="name">
+                    <input type="email" class="contact__input" name="email" data-i18n="contact_email" placeholder="Email" required aria-label="Email" autocomplete="email">
+                    <input type="tel" class="contact__input" name="phone" data-i18n="contact_phone" placeholder="Телефон" aria-label="Телефон" autocomplete="tel">
+                    <input type="text" class="contact__input" name="company" data-i18n="contact_company" placeholder="Компания" aria-label="Компания" autocomplete="organization">
+                    <textarea class="contact__input contact__textarea" name="message" data-i18n="contact_message" placeholder="Расскажите о вашем проекте" rows="4" aria-label="Сообщение"></textarea>
+                    <button type="submit" class="btn btn--primary btn--full" data-hover>
+                        <span data-i18n="contact_submit">Отправить заявку</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72" loading="lazy" decoding="async">
+                </div>
+                <div class="footer__links">
+                    <a href="/about" data-hover data-i18n="nav_about">О нас</a>
+                    <a href="/works" data-hover data-i18n="nav_works">Наши работы</a>
+                    <a href="/articles" data-hover data-i18n="nav_articles">Статьи</a>
+                    <a href="/#services" data-hover data-i18n="nav_services">Услуги</a>
+                    <a href="/#approach" data-hover data-i18n="nav_approach">Подход</a>
+                    <a href="/#contact" data-hover data-i18n="nav_contact">Контакты</a>
+                    <a href="/calculator" data-hover data-i18n="nav_cta">Рассчитать проект</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p data-i18n="footer_rights">&copy; 2026 Agile Business. Все права защищены.</p>
+                <a href="/privacy" class="footer__privacy-link" data-i18n="footer_privacy">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Structured Data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Agile Business",
+        "description": "Профессиональный бизнес-консалтинг в 5 направлениях",
+        "url": "https://agile-business-pro.com/",
+        "image": "/assets/logo.png",
+        "serviceType": ["Business Consulting", "Management Consulting", "Investment Consulting", "Creative & Marketing", "Analytics & Data", "IT & Development"],
+        "areaServed": ["RU", "GE", "AM", "BG", "US", "GB"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "email": "info@agilebusiness.com"
+        }
+    }
+    </script>
+
+
+    <div class="fab-hub" id="fabHub">
+        <button class="fab-hub__trigger" id="fabTrigger" aria-label="Menu">
+            <svg class="fab-hub__icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="fab-hub__icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="fab-hub__items" id="fabItems">
+            <a href="https://t.me/agilebusiness" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--tg" title="Telegram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.28-.02-.12.03-2.02 1.28-5.69 3.77-.54.37-1.03.55-1.47.54-.48-.01-1.41-.27-2.1-.5-.85-.28-1.52-.43-1.46-.91.03-.25.38-.51 1.05-.78 4.12-1.79 6.87-2.97 8.26-3.54 3.93-1.62 4.75-1.9 5.28-1.91.12 0 .37.03.54.18.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--wa" data-i18n="fab_whatsapp" title="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0"/></svg>
+            </a>
+            <a href="/calculator" class="fab-hub__item fab-hub__item--calc" data-i18n="calc_title" title="Рассчитать проект">
+                <svg class="fab-hub__calc-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M9 7.5h6M9 11.5h6M9 15.5h4"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/i18n.js" defer></script>
+    <script src="/js/main.js?v=20260417" defer></script>
+    <script src="/js/analytics.js" defer></script>
+</body>
+</html>
+
+

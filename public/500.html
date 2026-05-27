@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>500 — Agile Business</title>
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .error-page__bg {
+            position: absolute;
+            top:0;right:0;bottom:0;left:0;
+            z-index: 0;
+        }
+        .error-page__glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .error-page__glow--1 {
+            width: 500px; height: 500px;
+            background: var(--accent, #6c63ff);
+            top: -150px; right: -100px;
+        }
+        .error-page__glow--2 {
+            width: 400px; height: 400px;
+            background: var(--accent, #6c63ff);
+            bottom: -100px; left: -100px;
+        }
+        .error-page__content {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+        }
+        .error-page__code {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: clamp(8rem, 20vw, 14rem);
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--accent, #6c63ff) 0%, var(--text, #fff) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .error-page__text {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            color: var(--text-secondary, #aaa);
+            margin-bottom: 2.5rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <section class="error-page">
+        <div class="error-page__bg">
+            <div class="error-page__glow error-page__glow--1"></div>
+            <div class="error-page__glow error-page__glow--2"></div>
+        </div>
+        <div class="error-page__content">
+            <div class="error-page__code">500</div>
+            <p class="error-page__text">Внутренняя ошибка сервера. Попробуйте обновить страницу.</p>
+            <a href="/" class="btn btn--primary" style="display:inline-flex;align-items:center;gap:.5rem;padding:.9rem 2.2rem;border-radius:60px;font-size:1rem;font-weight:600;text-decoration:none">
+                На главную
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </section>
+</body>
+</html>

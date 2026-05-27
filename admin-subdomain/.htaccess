@@ -1,0 +1,8 @@
+# Admin subdomain .htaccess
+RewriteEngine On
+
+# Redirect /assets/ to main domain
+RewriteRule ^assets/(.*)$ https://agile-business-pro.com/assets/$1 [L,R=301]
+
+# Block all crawlers
+Header set X-Robots-Tag "noindex, nofollow"

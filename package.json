@@ -1,0 +1,35 @@
+{
+  "name": "agile-business-website",
+  "version": "2.0.0",
+  "description": "Agile Business — Premium Business Consulting Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "setup-db": "node setup-db.js",
+    "rebuild-sitemap": "node scripts/rebuild-sitemap.js",
+    "seed-seo": "node scripts/seed-seo-defaults.js",
+    "backup": "node scripts/backup.js"
+  },
+  "overrides": {
+    "form-data": "^2.5.4",
+    "qs": "^6.14.1",
+    "tough-cookie": "^4.1.3",
+    "request": "npm:@cypress/request@^3.0.6"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "dotenv": "^16.6.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^8.3.2",
+    "express-session": "^1.17.3",
+    "helmet": "^7.1.0",
+    "multer": "^2.1.1",
+    "pg": "^8.13.1",
+    "node-telegram-bot-api": "^0.64.0",
+    "nodemailer": "^8.0.3",
+    "qrcode": "^1.5.4",
+    "uuid": "^9.0.0"
+  }
+}

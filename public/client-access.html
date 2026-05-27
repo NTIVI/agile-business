@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход / Регистрация — Agile Business</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72">
+            </a>
+            <ul class="nav__links">
+                <li><a href="/works" class="nav__link" data-hover data-i18n="nav_works">Наши работы</a></li>
+                <li><a href="/#contact" class="nav__link" data-hover data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+            <div class="nav__actions">
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown__current" data-hover>RU</button>
+                    <ul class="lang-dropdown__list"></ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="calc-page" style="padding-top:96px">
+        <div class="calc-page__container">
+            <div class="calc-page__header">
+                <span class="section-label" data-i18n="client_access_label">Кабинет клиента</span>
+                <h1 class="section-title" data-i18n="client_access_title">Вход / Регистрация</h1>
+            </div>
+
+            <div class="panel__section" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-md);padding:24px">
+                <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">
+                    <button class="btn btn--ghost" id="tabLogin" data-hover><span data-i18n="client_login_tab">Вход</span></button>
+                    <button class="btn btn--ghost" id="tabRegister" data-hover><span data-i18n="client_register_tab">Регистрация</span></button>
+                </div>
+
+                <form id="loginForm" style="display:none">
+                    <div class="form-group"><label>Email</label><input type="email" id="loginEmail" required></div>
+                    <div class="form-group"><label data-i18n="client_password">Пароль</label><input type="password" id="loginPassword" required></div>
+                    <button class="btn btn--primary" type="submit" data-hover><span data-i18n="client_login_btn">Войти</span></button>
+                </form>
+
+                <form id="registerForm" style="display:none">
+                    <div class="form-group"><label>Email</label><input type="email" id="regEmail" required></div>
+                    <div class="form-group"><label data-i18n="client_slug">Slug (для ссылки профиля)</label><input type="text" id="regSlug" placeholder="my-company" required></div>
+                    <div class="form-group"><label data-i18n="client_password">Пароль</label><input type="password" id="regPassword" minlength="6" required></div>
+                    <button class="btn btn--primary" type="submit" data-hover><span data-i18n="client_register_btn">Создать профиль</span></button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/i18n.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/client-access.js" defer></script>
+    <script src="/js/analytics.js" defer></script>
+</body>
+</html>
+

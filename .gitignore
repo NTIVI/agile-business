@@ -1,0 +1,7 @@
+node_modules/
+.env
+*.ppk
+backups/
+agile_backup.sql
+agile_backup2.sql
+*.log

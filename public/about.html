@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agile Business — команда экспертов в стратегии, аналитике и технологиях. Agile подход к решению сложных бизнес-задач.">
+    <meta name="keywords" content="Agile Business, о компании, бизнес-консалтинг, команда экспертов, agile подход">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="О нас — Agile Business">
+    <meta property="og:description" content="Команда экспертов, объединяющая аналитику, стратегию и технологии для вашего бизнеса">
+    <meta property="og:image" content="https://agile-business-pro.com/assets/logo.png">
+    <meta property="og:url" content="https://agile-business-pro.com/about">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="О нас — Agile Business">
+    <meta name="twitter:description" content="Команда экспертов, объединяющая аналитику, стратегию и технологии для вашего бизнеса">
+    <meta name="twitter:image" content="https://agile-business-pro.com/assets/logo.png">
+    <link rel="canonical" href="https://agile-business-pro.com/about">
+    <link rel="alternate" hreflang="ru" href="https://agile-business-pro.com/about?lang=ru">
+    <link rel="alternate" hreflang="en" href="https://agile-business-pro.com/about?lang=en">
+    <link rel="alternate" hreflang="ka" href="https://agile-business-pro.com/about?lang=ka">
+    <link rel="alternate" hreflang="hy" href="https://agile-business-pro.com/about?lang=hy">
+    <link rel="alternate" hreflang="bg" href="https://agile-business-pro.com/about?lang=bg">
+    <link rel="alternate" hreflang="x-default" href="https://agile-business-pro.com/about">
+    <title data-i18n="about_page_title">О нас — Agile Business</title>
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <link rel="dns-prefetch" href="https://mc.yandex.ru">
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="ab-whatsapp-phone" content="">
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__container">
+            <a href="/" class="nav__logo">
+                <img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72">
+            </a>
+            <ul class="nav__links">
+                <li><a href="/about" class="nav__link" data-hover data-i18n="nav_about">О нас</a></li>
+                <li><a href="/works" class="nav__link" data-hover data-i18n="nav_works">Наши работы</a></li>
+                <li><a href="/articles" class="nav__link" data-hover data-i18n="nav_articles">Статьи</a></li>
+                <li><a href="/#services" class="nav__link" data-hover data-i18n="nav_services">Услуги</a></li>
+                <li><a href="/#approach" class="nav__link" data-hover data-i18n="nav_approach">Подход</a></li>
+                <li><a href="/#contact" class="nav__link" data-hover data-i18n="nav_contact">Контакты</a></li>
+            </ul>
+            <div class="nav__actions">
+                <button class="theme-toggle" id="themeToggle" data-hover aria-label="Theme">
+                    <svg class="theme-icon-dark" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="theme-icon-light" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button class="lang-dropdown__current" data-hover>RU</button>
+                    <ul class="lang-dropdown__list"></ul>
+                </div>
+                <a href="/calculator" class="nav__cta" data-hover data-i18n="nav_cta">Рассчитать проект</a>
+            </div>
+            <button class="nav__burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+        <ul class="mobile-menu__links">
+            <li><a href="/about" class="mobile-menu__link" data-i18n="nav_about">О нас</a></li>
+            <li><a href="/works" class="mobile-menu__link" data-i18n="nav_works">Наши работы</a></li>
+            <li><a href="/articles" class="mobile-menu__link" data-i18n="nav_articles">Статьи</a></li>
+            <li><a href="/#services" class="mobile-menu__link" data-i18n="nav_services">Услуги</a></li>
+            <li><a href="/#approach" class="mobile-menu__link" data-i18n="nav_approach">Подход</a></li>
+            <li><a href="/#contact" class="mobile-menu__link" data-i18n="nav_contact">Контакты</a></li>
+        </ul>
+        <a href="/calculator" class="mobile-menu__cta" data-i18n="nav_cta">Рассчитать проект</a>
+    </div>
+
+    <!-- Back Arrow -->
+    <a href="/" class="page-back" data-hover aria-label="Назад">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    </a>
+
+    <main class="calc-page with-page-back">
+        <div class="calc-page__container" data-articles="1">
+            <div class="calc-page__header">
+                <span class="section-label" data-i18n="about_label">О компании</span>
+                <h1 class="section-title" id="pageTitle" data-i18n="nav_about">О нас</h1>
+                <p class="services__desc" style="max-width:760px;margin:14px auto 0;">Бизнес-консалтинг, в котором стратегия, аналитика и технологии работают как единая система. Мы не продаём «слайды на полку» — мы доводим изменения до цифр в P&amp;L.</p>
+            </div>
+
+            <!-- Default content (показывается сразу, перекрывается контентом из админки если он есть) -->
+            <div class="about-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:28px">
+                <div class="about-chip" style="padding:22px 20px;border-radius:18px;border:1px solid var(--border);background:var(--bg-card);text-align:left">
+                    <div style="font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">5</div>
+                    <div style="margin-top:6px;color:var(--text-muted);font-size:13px;line-height:1.5">направлений экспертизы в одной команде</div>
+                </div>
+                <div class="about-chip" style="padding:22px 20px;border-radius:18px;border:1px solid var(--border);background:var(--bg-card);text-align:left">
+                    <div style="font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">20+</div>
+                    <div style="margin-top:6px;color:var(--text-muted);font-size:13px;line-height:1.5">проектов, доведённых до результата</div>
+                </div>
+                <div class="about-chip" style="padding:22px 20px;border-radius:18px;border:1px solid var(--border);background:var(--bg-card);text-align:left">
+                    <div style="font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">24 ч</div>
+                    <div style="margin-top:6px;color:var(--text-muted);font-size:13px;line-height:1.5">первая реакция на заявку</div>
+                </div>
+                <div class="about-chip" style="padding:22px 20px;border-radius:18px;border:1px solid var(--border);background:var(--bg-card);text-align:left">
+                    <div style="font-family:var(--font-display);font-size:34px;font-weight:800;color:var(--accent);letter-spacing:-1px;line-height:1">98%</div>
+                    <div style="margin-top:6px;color:var(--text-muted);font-size:13px;line-height:1.5">клиентов рекомендуют нас дальше</div>
+                </div>
+            </div>
+
+            <div class="panel__section" style="background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius-md);padding:clamp(20px,3vw,32px)">
+                <div id="pageHtml" style="color:var(--text-primary)">
+                    <section style="margin-bottom:28px">
+                        <h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;color:var(--text-heading)">Кто мы</h2>
+                        <p>Agile Business — команда из 5 практик: управление и стратегия, инвестиции и оценка, креатив и маркетинг, аналитика и данные, ИТ и разработка. Работаем с собственниками, советом директоров и операционными командами среднего и крупного бизнеса в России и СНГ.</p>
+                        <p>Собрались не из «консультантов по книжкам», а из людей, которые сами запускали, масштабировали и продавали бизнесы. Поэтому наши решения — про деньги и выручку, а не про красивые схемы.</p>
+                    </section>
+
+                    <section style="margin-bottom:28px">
+                        <h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;color:var(--text-heading)">Как мы работаем</h2>
+                        <ul style="padding-left:18px;margin:0;display:flex;flex-direction:column;gap:8px">
+                            <li><b>От задачи, а не от продукта.</b> Сначала диагностика и цифры — потом решение. Не продаём то, что не даст эффекта.</li>
+                            <li><b>Agile-спринты по 1–2 недели.</b> Результат виден не через полгода, а на каждом цикле: быстрые победы сразу, большие изменения — поэтапно.</li>
+                            <li><b>Фиксируем эффект в деньгах.</b> Перед стартом договариваемся, как будем считать результат. После — показываем в P&amp;L/воронке/отчётах.</li>
+                            <li><b>Сопровождаем внедрение.</b> Не сдаём отчёт и не исчезаем — помогаем команде пройти изменения и зафиксировать новые процессы.</li>
+                        </ul>
+                    </section>
+
+                    <section style="margin-bottom:28px">
+                        <h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;color:var(--text-heading)">Для кого мы полезны</h2>
+                        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px">
+                            <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-card)">
+                                <b style="color:var(--text-heading)">Собственникам</b>
+                                <p style="margin:6px 0 0;font-size:14px;line-height:1.6">Кто чувствует «потолок», не видит прозрачной картины в цифрах и устал всё тащить на ручном управлении.</p>
+                            </div>
+                            <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-card)">
+                                <b style="color:var(--text-heading)">Топ-менеджменту</b>
+                                <p style="margin:6px 0 0;font-size:14px;line-height:1.6">Кому нужна внешняя экспертиза и «вторая пара глаз» по стратегии, маркетингу, финансам или ИТ.</p>
+                            </div>
+                            <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-card)">
+                                <b style="color:var(--text-heading)">Инвесторам и фондам</b>
+                                <p style="margin:6px 0 0;font-size:14px;line-height:1.6">Due diligence, оценка, финмодель, анализ unit-экономики портфельных компаний.</p>
+                            </div>
+                            <div style="padding:16px;border:1px solid var(--border);border-radius:14px;background:var(--bg-card)">
+                                <b style="color:var(--text-heading)">Бизнесам на росте</b>
+                                <p style="margin:6px 0 0;font-size:14px;line-height:1.6">Запуск нового продукта, выход на новый рынок, подготовка к раунду или сделке M&amp;A.</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section style="margin-bottom:28px">
+                        <h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;color:var(--text-heading)">Принципы</h2>
+                        <ol style="padding-left:20px;margin:0;display:flex;flex-direction:column;gap:6px">
+                            <li><b>Данные, а не мнения.</b> Решения принимаем на цифрах — даже если они неудобные.</li>
+                            <li><b>Скорость важнее идеала.</b> Лучше рабочий MVP через месяц, чем «идеальный» проект через год.</li>
+                            <li><b>Ответственность за результат.</b> Договариваемся о метриках и берём на себя их защиту.</li>
+                            <li><b>Прозрачность.</b> Нет «волшебных методологий» — всё объяснимо и воспроизводимо внутренней командой.</li>
+                        </ol>
+                    </section>
+
+                    <section style="margin-bottom:4px">
+                        <h2 style="font-family:var(--font-display);font-size:24px;margin:0 0 12px;color:var(--text-heading)">С чего начать</h2>
+                        <p style="margin:0 0 14px">Свяжитесь с нами удобным способом — опишите задачу в 2–3 предложениях. В течение 24 часов вернёмся со встречей на 30 минут, чтобы понять, подходим ли мы друг другу и с чего стоит стартовать.</p>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap">
+                            <a href="/calculator" class="btn btn--primary" data-hover>
+                                <span>Рассчитать проект</span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="/#contact" class="btn btn--ghost" data-hover>Написать нам</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__top">
+                <div class="footer__brand"><img src="/assets/logo.png" alt="Agile Business" class="nav__logo-img" width="200" height="72" loading="lazy" decoding="async"></div>
+                <div class="footer__links">
+                    <a href="/about" data-hover data-i18n="nav_about">О нас</a>
+                    <a href="/works" data-hover data-i18n="nav_works">Наши работы</a>
+                    <a href="/articles" data-hover data-i18n="nav_articles">Статьи</a>
+                    <a href="/#services" data-hover data-i18n="nav_services">Услуги</a>
+                    <a href="/#approach" data-hover data-i18n="nav_approach">Подход</a>
+                    <a href="/#contact" data-hover data-i18n="nav_contact">Контакты</a>
+                    <a href="/calculator" data-hover data-i18n="nav_cta">Рассчитать проект</a>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p data-i18n="footer_rights">&copy; 2026 Agile Business. Все права защищены.</p>
+                <a href="/privacy" class="footer__privacy-link" data-i18n="footer_privacy">Политика конфиденциальности</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fab-hub" id="fabHub">
+        <button class="fab-hub__trigger" id="fabTrigger" aria-label="Menu">
+            <svg class="fab-hub__icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            <svg class="fab-hub__icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <div class="fab-hub__items" id="fabItems">
+            <a href="https://t.me/agilebusiness" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--tg" title="Telegram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.28-.02-.12.03-2.02 1.28-5.69 3.77-.54.37-1.03.55-1.47.54-.48-.01-1.41-.27-2.1-.5-.85-.28-1.52-.43-1.46-.91.03-.25.38-.51 1.05-.78 4.12-1.79 6.87-2.97 8.26-3.54 3.93-1.62 4.75-1.9 5.28-1.91.12 0 .37.03.54.18.14.12.18.28.2.47-.01.06.01.24 0 .37z"/></svg>
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" class="fab-hub__item fab-hub__item--wa" data-i18n="fab_whatsapp" title="WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.881 9.884M12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0012.05 0"/></svg>
+            </a>
+            <a href="/calculator" class="fab-hub__item fab-hub__item--calc" data-i18n="calc_title" title="Рассчитать проект">
+                <svg class="fab-hub__calc-svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.85" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2.5" width="14" height="19" rx="2"/><path d="M9 7.5h6M9 11.5h6M9 15.5h4"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/i18n.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/pages.js" defer></script>
+    <script src="/js/analytics.js" defer></script>
+</body>
+</html>

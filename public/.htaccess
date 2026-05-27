@@ -1,0 +1,102 @@
+# Apache .htaccess — Agile Business
+# Caching, HTTPS redirect, compression, security headers
+
+# ── HTTPS redirect ────────────────────────────────────────
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ── www → non-www ─────────────────────────────────────────
+RewriteCond %{HTTP_HOST} ^www\.agile-business-pro\.com [NC]
+RewriteRule ^(.*)$ https://agile-business-pro.com/$1 [L,R=301]
+
+# ── Admin subdomain: serve admin.html as index ────────────
+RewriteCond %{HTTP_HOST} ^(www\.)?admin\.agile-business-pro\.com$ [NC]
+RewriteRule ^$ /admin.html [L]
+
+# ── API routing: /api/* → api.php ─────────────────────────
+RewriteRule ^api(/.*)?$ /api.php/$1 [L,QSA]
+
+# ── Admin subdomain: noindex ──────────────────────────────
+<IfModule mod_headers.c>
+    <If "%{HTTP_HOST} =~ /^(www\.)?admin\.agile-business-pro\.com$/">
+        Header set X-Robots-Tag "noindex, nofollow"
+    </If>
+</IfModule>
+
+# ── Clean URLs: /calculator → /calculator.html ────────────
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^calculator$ /calculator.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^about$ /about.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^works$ /works.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^articles$ /articles.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^article$ /article.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^client$ /client.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^client-access$ /client-access.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^admin$ /admin.html [L]
+
+# ── Browser caching ──────────────────────────────────────
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/jpg "access plus 6 months"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/json "access plus 1 day"
+</IfModule>
+
+# ── Gzip compression ─────────────────────────────────────
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json text/xml application/xml
+</IfModule>
+
+# ── Security headers ─────────────────────────────────────
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+</IfModule>
+
+# ── Block sensitive files ─────────────────────────────────
+<FilesMatch "\.(env|json|sql|log|sh|md)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ── Allow manifest.json ───────────────────────────────────
+<Files "manifest.json">
+    Order allow,deny
+    Allow from all
+</Files>
+
+# ── Error pages ───────────────────────────────────────────
+ErrorDocument 404 /404.html
