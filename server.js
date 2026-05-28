@@ -125,8 +125,28 @@ const pool = new Pool({
 });
 
 let dbReady = false;
+let isInitializingDb = false;
+
+async function ensureDbConnected() {
+    if (dbReady) return true;
+    if (isInitializingDb) return false;
+    isInitializingDb = true;
+    try {
+        await pool.query('SELECT 1');
+        console.log('  ✅ PostgreSQL connected (lazy connection)');
+        await ensureExtraSchemaColumns();
+        dbReady = true;
+        isInitializingDb = false;
+        return true;
+    } catch (e) {
+        isInitializingDb = false;
+        console.warn('  ⚠️ PostgreSQL lazy connection attempt failed:', e.message);
+        return false;
+    }
+}
 
 async function query(sql, params) {
+    await ensureDbConnected();
     if (!dbReady) throw new Error('Database not available');
     const { rows } = await pool.query(sql, params || []);
     return rows;
@@ -574,6 +594,14 @@ app.use(session({
         secure: process.env.NODE_ENV === 'production'
     }
 }));
+
+// Lazy DB connection middleware for all API requests to handle scale-to-zero / cold starts
+app.use(async (req, res, next) => {
+    if (req.path.startsWith('/api') || req.path.startsWith('/api.php')) {
+        await ensureDbConnected();
+    }
+    next();
+});
 
 // Клиентские маршруты SPA админки на поддомене (после статики, до публичных ЧПУ)
 app.use((req, res, next) => {
@@ -1686,6 +1714,14 @@ app.use((err, req, res, next) => {
 /* ── Start ──────────────────────────────────────────── */
 
 async function startServer() {
+    if (process.env.VERCEL) {
+        console.log('  ⚡ Running on Vercel (serverless mode). Bypassing app.listen() and eager DB connection.');
+        ensureDbConnected().catch(e => {
+            console.warn('  ⚠️ Lazy DB connection on Vercel startup failed:', e.message);
+        });
+        return;
+    }
+
     try {
         await pool.query('SELECT 1');
         console.log('  ✅ PostgreSQL connected');
@@ -1728,3 +1764,5 @@ async function startServer() {
 }
 
 startServer();
+
+module.exports = app;

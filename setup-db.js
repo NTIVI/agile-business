@@ -17,18 +17,23 @@ async function setup() {
     console.log('Agile Business — PostgreSQL Database Setup\n');
 
     // Connect to default 'postgres' DB to create target DB if missing
-    const rootClient = new Client({ ...DB_CONFIG, database: 'postgres' });
-    await rootClient.connect();
+    try {
+        const rootClient = new Client({ ...DB_CONFIG, database: 'postgres' });
+        await rootClient.connect();
 
-    console.log(`Creating database "${DB_NAME}" if it does not exist...`);
-    const res = await rootClient.query("SELECT 1 FROM pg_database WHERE datname = $1", [DB_NAME]);
-    if (!res.rows.length) {
-        await rootClient.query(`CREATE DATABASE "${DB_NAME}" ENCODING 'UTF8'`);
-        console.log(`  Database "${DB_NAME}" created.`);
-    } else {
-        console.log(`  Database "${DB_NAME}" already exists.`);
+        console.log(`Creating database "${DB_NAME}" if it does not exist...`);
+        const res = await rootClient.query("SELECT 1 FROM pg_database WHERE datname = $1", [DB_NAME]);
+        if (!res.rows.length) {
+            await rootClient.query(`CREATE DATABASE "${DB_NAME}" ENCODING 'UTF8'`);
+            console.log(`  Database "${DB_NAME}" created.`);
+        } else {
+            console.log(`  Database "${DB_NAME}" already exists.`);
+        }
+        await rootClient.end();
+    } catch (e) {
+        console.warn(`  ⚠️ Could not connect to default 'postgres' database or create database dynamically: ${e.message}`);
+        console.warn('  ℹ️ Attempting to connect directly to the target database...');
     }
-    await rootClient.end();
 
     // Now connect to target DB
     const conn = new Client({ ...DB_CONFIG, database: DB_NAME });
