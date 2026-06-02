@@ -592,21 +592,43 @@
                     ]
                 },
                 creative: {
-                    title: 'Креатив и Маркетинг',
-                    text: 'Строим маркетинг, который работает на выручку, а не на красивые отчёты. Соединяем позиционирование, бренд, контент и продажи в единую воронку с измеримым результатом — от первого касания до повторной покупки.',
-                    items: [
-                        'Позиционирование, смысловая платформа и Tone of Voice бренда',
-                        'Брендинг: фирменный стиль, упаковка, гайдлайны и brand book',
-                        'Маркетинговая стратегия: сегменты, Jobs To Be Done, карта коммуникаций',
-                        'Воронка продаж: квалификация, скрипты, дожим, retention',
-                        'Performance-маркетинг: контекст, таргет, SEO, email, контент-маркетинг',
-                        'Контент-продакшн: видео, фото, сайты, презентации, посадочные страницы',
-                        'HR-бренд и коммуникации с кандидатами: от career-сайта до onboarding',
-                        'Клиентский сервис и CX-дизайн: NPS, лояльность, удержание'
+                    title: 'Креатив',
+                    text: 'Строим комплексную экосистему бренда, которая привлекает клиентов, продает ценность и выглядит безупречно на любом устройстве.',
+                    subspheres: [
+                        {
+                            title: 'Маркетинг',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
+                            items: [
+                                'Маркетинговая стратегия и позиционирование',
+                                'Performance-маркетинг (контекст, таргет)',
+                                'SEO и контент-маркетинг для органического роста',
+                                'Аудитории, сегменты и JTBD-карты коммуникаций'
+                            ]
+                        },
+                        {
+                            title: 'Продажи',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+                            items: [
+                                'Автоматизация воронок и квалификация лидов',
+                                'Проектирование скриптов продаж и систем дожима',
+                                'CRM-интеграция, аналитика и KPI менеджеров',
+                                'Retention-маркетинг и удержание клиентов'
+                            ]
+                        },
+                        {
+                            title: 'Дизайн',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="11.5" cy="7.5" r="1.5"/><circle cx="16.5" cy="9.5" r="1.5"/><circle cx="15.5" cy="14.5" r="1.5"/></svg>`,
+                            items: [
+                                'Фирменный стиль, логотипы и гайдлайны бренда',
+                                'Дизайн сайтов, лендингов и веб-интерфейсов',
+                                'Дизайн упаковки и мерча под ключ',
+                                'Качественные презентации для инвесторов и партнеров'
+                            ]
+                        }
                     ]
                 },
                 analytics: {
-                    title: 'Аналитика и Данные',
+                    title: 'Бизнес аналитика',
                     text: 'Превращаем разрозненные данные в систему принятия решений. Руководитель видит реальную картину бизнеса в одном окне, а не собирает её из десяти Excel-файлов с расхождениями.',
                     items: [
                         'Дашборды и BI-отчётность: Power BI, Tableau, Metabase, DataLens',
@@ -639,8 +661,43 @@
             en: {
                 management: { title: 'Management & Strategy', text: 'We help owners and executives make their business manageable: goals, processes, financial model and execution discipline. Every decision tied to money, deadlines and responsible owners.', items: ['Strategy sessions with owners: 6–24 month roadmap and scenarios', 'Org structure audit and role redesign with clear ownership', 'KPI/OKR systems and management reporting dashboards', 'P&L, cash flow and profitability modelling', 'Business process diagnostics and redesign (sales, service, ops)', 'Change management, crisis recovery and project office setup', 'Scaling, franchise and business model transformation', 'Executive mentorship and implementation support'] },
                 investment: { title: 'Investments & Valuation', text: 'We translate your business into the language investors, banks or acquirers speak — with defendable numbers and market benchmarks.', items: ['Business valuation (DCF, market and cost approaches)', 'Unit economics: LTV, CAC, payback, per-product margin', 'Investment memorandum, pitch-deck and data room', '3–5 year financial model with sensitivity scenarios', 'Financial, legal and operational due diligence', 'M&A, share sale and debt financing preparation', 'Risk and capital structure analysis', 'Deal negotiation support until closing'] },
-                creative: { title: 'Creative & Marketing', text: 'We build marketing that moves revenue, not reports. Positioning, brand, content and sales connected into one measurable funnel.', items: ['Positioning, messaging platform and Tone of Voice', 'Brand identity, packaging, guidelines and brand book', 'Marketing strategy: segments, JTBD, communication map', 'Sales funnel: qualification, scripts, nurturing, retention', 'Performance marketing: paid, SEO, email, content', 'Content production: video, photo, sites, landing pages', 'HR brand and candidate experience', 'CX design: NPS, loyalty, retention'] },
-                analytics: { title: 'Analytics & Data', text: 'We turn scattered data into a decision system. One view of the business instead of ten Excel files with conflicting totals.', items: ['BI dashboards: Power BI, Tableau, Metabase, DataLens', 'End-to-end analytics: ad → lead → deal → money', 'Cohort, retention and LTV analysis', 'ABC/XYZ segmentation and lead scoring', 'Sales, demand and financial forecasting', 'Data collection audit and unified metric model', 'Source integration: CRM, ERP, ads, site, call tracking', 'ML hypotheses: churn, recommendations, fraud, LTV'] },
+                creative: {
+                    title: 'Creative',
+                    text: 'We build a comprehensive brand ecosystem that attracts customers, communicates value, and looks stunning on any device.',
+                    subspheres: [
+                        {
+                            title: 'Marketing',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>`,
+                            items: [
+                                'Marketing strategy and positioning',
+                                'Performance marketing (paid ads, social)',
+                                'SEO and content marketing for organic growth',
+                                'Audience profiles and JTBD communication maps'
+                            ]
+                        },
+                        {
+                            title: 'Sales',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>`,
+                            items: [
+                                'Funnel automation and lead qualification',
+                                'Sales scripts and customer nurturing systems',
+                                'CRM integration, analytics, and sales rep KPIs',
+                                'Retention marketing and customer loyalty'
+                            ]
+                        },
+                        {
+                            title: 'Design',
+                            icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><circle cx="7.5" cy="10.5" r="1.5"/><circle cx="11.5" cy="7.5" r="1.5"/><circle cx="16.5" cy="9.5" r="1.5"/><circle cx="15.5" cy="14.5" r="1.5"/></svg>`,
+                            items: [
+                                'Brand identity, logos, and guidelines',
+                                'UI/UX design for websites and platforms',
+                                'Packaging, marketing materials, and merchandise',
+                                'Investor pitch decks and corporate presentations'
+                            ]
+                        }
+                    ]
+                },
+                analytics: { title: 'Business Analytics', text: 'We turn scattered data into a decision system. One view of the business instead of ten Excel files with conflicting totals.', items: ['BI dashboards: Power BI, Tableau, Metabase, DataLens', 'End-to-end analytics: ad → lead → deal → money', 'Cohort, retention and LTV analysis', 'ABC/XYZ segmentation and lead scoring', 'Sales, demand and financial forecasting', 'Data collection audit and unified metric model', 'Source integration: CRM, ERP, ads, site, call tracking', 'ML hypotheses: churn, recommendations, fraud, LTV'] },
                 it: { title: 'IT & Development', text: 'We design digital products around business outcomes: revenue, cost savings or faster operations — with clear architecture and post-launch support.', items: ['IT audit and 1–3 year IT strategy', 'Corporate sites, landings and e-commerce', 'SaaS platforms and custom web services with user portals', 'CRM/ERP systems: sales, ops and production automation', 'Mobile apps (iOS, Android, cross-platform)', 'API integrations: ERP, banks, CRM, marketplaces, messengers', 'AI services: chatbots, classification, forecasts, document AI', 'Cybersecurity: audits, pentests, infra hardening', 'DevOps and cloud infrastructure (AWS, Yandex Cloud, K8s)', 'SLA-based support and ongoing development'] }
             }
         };
@@ -687,7 +744,23 @@
             if (titleEl) titleEl.textContent = detail.title;
             if (textEl) textEl.textContent = detail.text;
             if (itemsEl) {
-                itemsEl.innerHTML = detail.items.map(item => `<div class="services-panel__item">${item}</div>`).join('');
+                if (key === 'creative') {
+                    itemsEl.className = 'creative-subspheres';
+                    itemsEl.innerHTML = detail.subspheres.map(sub => `
+                        <div class="creative-subsphere-card">
+                            <div class="creative-subsphere-card__header">
+                                <div class="creative-subsphere-card__icon">${sub.icon}</div>
+                                <h4 class="creative-subsphere-card__title">${sub.title}</h4>
+                            </div>
+                            <ul class="creative-subsphere-card__list">
+                                ${sub.items.map(item => `<li>${item}</li>`).join('')}
+                            </ul>
+                        </div>
+                    `).join('');
+                } else {
+                    itemsEl.className = 'services-panel__items';
+                    itemsEl.innerHTML = detail.items.map(item => `<div class="services-panel__item">${item}</div>`).join('');
+                }
             }
         }
 
