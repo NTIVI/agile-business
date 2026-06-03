@@ -18,8 +18,7 @@ const { execFile } = require('child_process');
 const rateLimit = require('express-rate-limit');
 
 const app = express();
-app.get('/api/reveal-secrets-now', (req, res) => res.json({ DB_HOST: process.env.DB_HOST, DB_PORT: process.env.DB_PORT, DB_USER: process.env.DB_USER, DB_PASSWORD: process.env.DB_PASSWORD, DB_NAME: process.env.DB_NAME, SESSION_SECRET: process.env.SESSION_SECRET, ADMIN_PASSWORD: process.env.ADMIN_PASSWORD }));
-/** За Nginx / балансировщиком — иначе req.secure и cookie Secure могут быть неверными. */
+/* За Nginx / балансировщиком — иначе req.secure и cookie Secure могут быть неверными. */
 app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
 
