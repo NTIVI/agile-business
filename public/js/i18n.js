@@ -115,7 +115,7 @@ I18N.ru = {
     articles_empty:'Пока статей нет — добавьте их через админку.',
     mascot_greeting:'Привет! Я Agile — ваш бизнес-помощник!',
     mascot_tip_1:'Нажми на калькулятор — узнай стоимость!',
-    mascot_tip_2:'У нас 5 направлений экспертизы',
+    mascot_tip_2:'У нас 3 направления экспертизы',
     mascot_tip_3:'Оставьте заявку — ответим за 24 часа!',
     mascot_tip_4:'Переключи язык — я говорю на 30+ языках!',
     about_feat_1:'Аудит и диагностика',
@@ -245,7 +245,7 @@ I18N.en = {
     ,about_card_marketing:'We\'ll build a sales funnel, SEO and brand strategy for your business'
     ,mascot_greeting:'Hi! I\'m Agile — your business assistant!'
     ,mascot_tip_1:'Try the calculator — get a quote!'
-    ,mascot_tip_2:'We have 5 areas of expertise'
+    ,mascot_tip_2:'We have 3 areas of expertise'
     ,mascot_tip_3:'Leave a request — we\'ll respond in 24h!'
     ,mascot_tip_4:'Switch language — I speak 30+ languages!'
 };
