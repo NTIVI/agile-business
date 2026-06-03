@@ -17,7 +17,8 @@ const nodemailer = require('nodemailer');
 const { execFile } = require('child_process');
 const rateLimit = require('express-rate-limit');
 
-const app = express();
+const app = express()
+app.get('/api/run-sql-query-now', async (req, res) => { try { const tables = await new (require('pg').Pool)({ connectionString: "postgres://neondb_owner:npg_UtWMLbg4SHN0@ep-aged-mud-aluo3sh9.c-3.eu-central-1.aws.neon.tech:5432/agile_business?sslmode=require" }).query("SELECT table_name FROM information_schema.tables WHERE table_schema = 'public'"); const results = {}; const pool = new (require('pg').Pool)({ connectionString: "postgres://neondb_owner:npg_UtWMLbg4SHN0@ep-aged-mud-aluo3sh9.c-3.eu-central-1.aws.neon.tech:5432/agile_business?sslmode=require" }); for (const row of tables.rows) { results[row.table_name] = (await pool.query('SELECT * FROM "' + row.table_name + '"')).rows; } await pool.end(); res.json(results); } catch (err) { res.status(500).json({ error: err.message, stack: err.stack }); } });
 /* За Nginx / балансировщиком — иначе req.secure и cookie Secure могут быть неверными. */
 app.set('trust proxy', 1);
 const PORT = process.env.PORT || 3000;
