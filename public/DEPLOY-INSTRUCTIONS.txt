@@ -1,0 +1,27 @@
+AGILE BUSINESS PRO - DEPLOY PACKAGE (FULL UPDATE)
+=================================================
+Date: 2026-06-12 20:40
+
+INCLUDES ALL RECENT CHANGES:
+- Homepage products block (#projects) - Agile Call + KPI
+- Menu Services scrolls to #services on homepage
+- Menu Products scrolls to #projects on homepage
+- /services page with full price list (IT + Analytics from official DOCX)
+- /products page with Agile Call demo link
+- Calculator: min/avg/max pricing by company size
+
+UPLOAD TO: /www/agile-business-pro.com/
+1. Backup index.html and .htaccess
+2. Extract ALL files into site root (next to index.html)
+3. Do NOT leave files inside zip on server
+4. Keep server api.php and .env unless updating backend
+
+TEST AFTER DEPLOY:
+- https://agile-business-pro.com/ (scroll: Services, Products sections)
+- https://agile-business-pro.com/services
+- https://agile-business-pro.com/products
+- https://agile-business-pro.com/calculator
+- Ctrl+F5 if cache shows old version
+
+NOTE: Creative sphere prices use tier model until official Creative DOCX is provided.
+IT and Analytics prices match official documents.

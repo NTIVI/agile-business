@@ -7,7 +7,7 @@
    AGILE BUSINESS — Georgian (ქართული) Complete Translation
    ================================================================ */
 I18N.ka = {
-    nav_about:'ჩვენ შესახებ', nav_works:'ჩვენი ნამუშევრები', nav_articles:'სტატიები', nav_services:'სერვისები', nav_approach:'მიდგომა', nav_contact:'კონტაქტი', nav_cta:'პროექტის გაანგარიშება',
+    nav_about:'ჩვენ შესახებ', nav_works:'ჩვენი ნამუშევრები', nav_articles:'სტატიები', nav_services:'სერვისები', nav_products:'პროდუქტები', nav_approach:'მიდგომა', nav_contact:'კონტაქტი', nav_cta:'პროექტის გაანგარიშება',
     hero_badge:'ახალი თაობის ბიზნეს-კონსალტინგი',
     hero_title_1:'გადაწყვეტა', hero_title_2:'ბიზნეს', hero_title_3:'ამოცანებისთვის',
     hero_subtitle:'3 ექსპერტიზის მიმართულება თქვენი ბიზნესის ტრანსფორმაციისა და მასშტაბირებისთვის',
@@ -134,6 +134,7 @@ I18N.hy = {
     nav_works:'\u0544\u0565\u0580 \u0561\u0577\u056d\u0561\u057f\u0561\u0576\u0584\u0576\u0565\u0580\u0568',
     nav_articles:'\u0540\u0578\u0564\u057e\u0561\u056e\u0576\u0565\u0580',
     nav_services:'\u053e\u0561\u057c\u0561\u0575\u0578\u0582\u0569\u0575\u0578\u0582\u0576\u0576\u0565\u0580',
+    nav_products:'\u0531\u0580\u057f\u0561\u0564\u0580\u0561\u0576\u0584\u0576\u0565\u0580',
     nav_approach:'\u0544\u0578\u057f\u0565\u0581\u0578\u0582\u0574',
     nav_contact:'\u053f\u0561\u057a',
     nav_cta:'\u0540\u0561\u0577\u057e\u0561\u0580\u056f\u0565\u056c \u0576\u0561\u056d\u0561\u0563\u056b\u056e\u0568',
@@ -317,6 +318,7 @@ I18N.bg = {
     nav_works:'Нашите проекти',
     nav_articles:'Статии',
     nav_services:'Услуги',
+    nav_products:'Продукти',
     nav_approach:'Подход',
     nav_contact:'Контакти',
     nav_cta:'Изчисли проект',

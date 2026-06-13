@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор стоимости — Agile Business</title>
-    <meta name="description" content="Рассчитайте стоимость консалтинговых услуг онлайн. 5 направлений экспертизы. Agile Business.">
+    <meta name="description" content="Рассчитайте стоимость консалтинговых услуг онлайн. 3 направления экспертизы. Agile Business.">
     <meta name="keywords" content="калькулятор стоимости консалтинга, стоимость бизнес консалтинга, расчёт услуг">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Калькулятор стоимости — Agile Business">
@@ -42,6 +42,7 @@
                 <li><a href="/works" class="nav__link" data-hover data-i18n="nav_works">Наши работы</a></li>
                 <li><a href="/articles" class="nav__link" data-hover data-i18n="nav_articles">Статьи</a></li>
                 <li><a href="/#services" class="nav__link" data-hover data-i18n="nav_services">Услуги</a></li>
+                <li><a href="/#projects" class="nav__link" data-hover data-i18n="nav_products">Продукты</a></li>
                 <li><a href="/#approach" class="nav__link" data-hover data-i18n="nav_approach">Подход</a></li>
                 <li><a href="/#contact" class="nav__link" data-hover data-i18n="nav_contact">Контакты</a></li>
             </ul>
@@ -64,6 +65,7 @@
             <li><a href="/works" class="mobile-menu__link" data-i18n="nav_works">Наши работы</a></li>
             <li><a href="/articles" class="mobile-menu__link" data-i18n="nav_articles">Статьи</a></li>
             <li><a href="/#services" class="mobile-menu__link" data-i18n="nav_services">Услуги</a></li>
+            <li><a href="/#projects" class="mobile-menu__link" data-i18n="nav_products">Продукты</a></li>
             <li><a href="/#approach" class="mobile-menu__link" data-i18n="nav_approach">Подход</a></li>
             <li><a href="/#contact" class="mobile-menu__link" data-i18n="nav_contact">Контакты</a></li>
         </ul>
@@ -95,25 +97,17 @@
                 <h2 class="calc-step__title" data-i18n="calc_step_1_title">Выберите направление</h2>
                 <p class="calc-step__subtitle" data-i18n="calc_step_1_sub">Какая сфера консалтинга вас интересует?</p>
                 <div class="calc-options" id="serviceOptions">
-                    <div class="calc-option" data-value="management" data-hover>
-                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 20h20"/><path d="M5 20V9l7-5 7 5v11"/></svg></div>
-                        <div class="calc-option__name" data-i18n="srv_1_title">Управление и Стратегия</div>
-                    </div>
-                    <div class="calc-option" data-value="investment" data-hover>
-                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 12h5l3-9 4 18 3-9h5"/></svg></div>
-                        <div class="calc-option__name" data-i18n="srv_2_title">Инвестиции и Оценка</div>
-                    </div>
-                    <div class="calc-option" data-value="creative" data-hover>
-                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
-                        <div class="calc-option__name" data-i18n="srv_3_title">Креатив</div>
-                    </div>
                     <div class="calc-option" data-value="analytics" data-hover>
                         <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
-                        <div class="calc-option__name" data-i18n="srv_4_title">Аналитика и Данные</div>
+                        <div class="calc-option__name" data-i18n="srv_4_title">Бизнес аналитика</div>
                     </div>
                     <div class="calc-option" data-value="it" data-hover>
                         <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
                         <div class="calc-option__name" data-i18n="srv_5_title">ИТ и Разработка</div>
+                    </div>
+                    <div class="calc-option" data-value="creative" data-hover>
+                        <div class="calc-option__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg></div>
+                        <div class="calc-option__name" data-i18n="srv_3_title">Креатив</div>
                     </div>
                 </div>
                 <div class="calc-nav">
@@ -286,6 +280,7 @@
                     <a href="/works" data-hover data-i18n="nav_works">Наши работы</a>
                     <a href="/articles" data-hover data-i18n="nav_articles">Статьи</a>
                     <a href="/#services" data-hover data-i18n="nav_services">Услуги</a>
+                    <a href="/#projects" data-hover data-i18n="nav_products">Продукты</a>
                     <a href="/#approach" data-hover data-i18n="nav_approach">Подход</a>
                     <a href="/#contact" data-hover data-i18n="nav_contact">Контакты</a>
                 </div>

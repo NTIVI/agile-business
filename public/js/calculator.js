@@ -10,11 +10,9 @@
 
     /* ── Pricing (defaults; overridden from DB) ─────── */
     let BASE_PRICES = {
-        management: 250000,
-        investment: 300000,
-        creative: 180000,
-        analytics: 200000,
-        it: 350000
+        analytics: 35000,
+        it: 45000,
+        creative: 30000
     };
 
     let SIZE_MULT = { small: 1, medium: 1.5, large: 2.5 };
@@ -54,11 +52,65 @@
     const SPHERES_WITH_CATALOG = new Set(['it', 'analytics', 'creative']);
 
     const SERVICE_NAMES = {
-        ru: { management:'Управление и Стратегия', investment:'Инвестиции и Оценка',
-              creative:'Креатив', analytics:'Аналитика и Данные', it:'ИТ и Разработка' },
-        en: { management:'Management & Strategy', investment:'Investment & Valuation',
-              creative:'Creative', analytics:'Analytics & Data', it:'IT & Development' }
+        ru: { analytics:'Бизнес аналитика', it:'ИТ и Разработка', creative:'Креатив' },
+        en: { analytics:'Business Analytics', it:'IT & Development', creative:'Creative' }
     };
+
+    const COMPLEX_TO_TIER = { basic: 'low', standard: 'medium', premium: 'high' };
+
+    /** Малый → min, средний → среднее, крупный → max (по правилу из прайса). */
+    function priceFromRange(min, max, companySize) {
+        const lo = Number(min) || 0;
+        const hi = Number(max) || lo;
+        const size = companySize || selections.company_size || 'medium';
+        if (size === 'small') return lo;
+        if (size === 'large') return hi;
+        return Math.round((lo + hi) / 2);
+    }
+
+    function companySizeFactor() {
+        const minF = 1;
+        const maxF = SIZE_MULT.large || 2.5;
+        const size = selections.company_size || 'medium';
+        if (size === 'small') return minF;
+        if (size === 'large') return maxF;
+        return (minF + maxF) / 2;
+    }
+
+    function catalogItemPrice(item) {
+        if (!item) return 0;
+        if (item.prices_by_size && selections.company_size) {
+            return Number(item.prices_by_size[selections.company_size] || item.price || 0);
+        }
+        if (Array.isArray(item.tiers) && item.tiers.length) {
+            const level = COMPLEX_TO_TIER[selections.complexity] || 'medium';
+            const tier = item.tiers.find(t => t.level === level) || item.tiers[1] || item.tiers[0];
+            if (tier) return priceFromRange(tier.price_min, tier.price_max, selections.company_size);
+        }
+        return Number(item.price || 0);
+    }
+
+    function catalogItemPriceLabel(item) {
+        if (!item) return '';
+        const sym = (typeof t === 'function') ? t('currency_symbol') : '₽';
+        if (item.prices_by_size && selections.company_size) {
+            const p = Number(item.prices_by_size[selections.company_size] || 0);
+            return p ? `${p.toLocaleString('ru-RU')} ${sym}` : '';
+        }
+        if (Array.isArray(item.tiers) && item.tiers.length) {
+            const level = COMPLEX_TO_TIER[selections.complexity] || 'medium';
+            const tier = item.tiers.find(tierRow => tierRow.level === level) || item.tiers[1] || item.tiers[0];
+            if (tier) {
+                if (selections.company_size) {
+                    const p = priceFromRange(tier.price_min, tier.price_max, selections.company_size);
+                    return `${p.toLocaleString('ru-RU')} ${sym}`;
+                }
+                return `${Number(tier.price_min).toLocaleString('ru-RU')} – ${Number(tier.price_max).toLocaleString('ru-RU')} ${sym}`;
+            }
+        }
+        const p = Number(item.price || 0);
+        return p ? `${p.toLocaleString('ru-RU')} ${sym}` : '';
+    }
 
     const SIZE_NAMES = {
         ru: { small:'Малый бизнес', medium:'Средний бизнес', large:'Крупный бизнес' },
@@ -130,7 +182,7 @@
         let sum = 0;
         list.forEach(i => {
             const key = String(i.key || '').trim();
-            if (key && selectedItCriteria.has(key)) sum += Number(i.price || 0);
+            if (key && selectedItCriteria.has(key)) sum += catalogItemPrice(i);
         });
         return sum;
     }
@@ -142,7 +194,7 @@
         const list = criteriaForSphere();
         list.forEach(i => {
             const key = String(i.key || '').trim();
-            if (key && selectedItCriteria.has(key)) sum += Number(i.price || 0);
+            if (key && selectedItCriteria.has(key)) sum += catalogItemPrice(i);
         });
         const label = (typeof t === 'function') ? t('it_criteria_selected') : 'Выбрано доп. услуг';
         sumEl.textContent = `${label}: +${sum.toLocaleString('ru-RU')} ${(typeof t === 'function') ? t('currency_symbol') : '₽'}`;
@@ -202,7 +254,7 @@
                 const key = String(item.key || '').trim();
                 if (!key) return;
                 const label = String(item.label || key);
-                const price = Number(item.price || 0);
+                const priceLabel = catalogItemPriceLabel(item) || `${Number(item.price || 0).toLocaleString('ru-RU')} ${(typeof t === 'function') ? t('currency_symbol') : '₽'}`;
                 const checked = selectedItCriteria.has(key);
                 const id = 'itc_' + key.replace(/[^a-z0-9_]/gi, '_');
 
@@ -213,7 +265,7 @@
                     <input id="${id}" type="checkbox" ${checked ? 'checked' : ''} style="width:16px;height:16px;margin-top:2px">
                     <div style="display:flex;flex-direction:column;gap:2px;min-width:0">
                         <div style="color:var(--text-heading);font-weight:600;font-size:14px;line-height:1.35">${escapeHtml(label)}</div>
-                        <div style="color:var(--text-muted);font-size:12px">+ ${price.toLocaleString('ru-RU')} ${(typeof t === 'function') ? t('currency_symbol') : '₽'}</div>
+                        <div style="color:var(--text-muted);font-size:12px">${priceLabel}</div>
                     </div>
                 `;
                 const input = row.querySelector('input');
@@ -280,6 +332,9 @@
                 selectedItCriteria = new Set();
                 selections.it_criteria_json = '';
             }
+            if (field === 'company_size' || field === 'complexity') {
+                syncItCriteriaUI();
+            }
             nextBtn.disabled = false;
         });
     }
@@ -287,6 +342,12 @@
     setupOptions('serviceOptions', 'service', 'nextStep1');
     setupOptions('sizeOptions', 'company_size', 'nextStep2');
     setupOptions('complexityOptions', 'complexity', 'nextStep3');
+
+    ['nextStep2', 'nextStep3', 'nextStep4'].forEach(id => {
+        const btn = $('#' + id);
+        if (!btn) return;
+        btn.addEventListener('click', () => { syncItCriteriaUI(); });
+    });
     setupOptions('durationOptions', 'duration', 'nextStep4');
 
     /* ── Navigation Buttons ──────────────────────────── */
@@ -471,11 +532,11 @@
 
     function calculateAndShow() {
         const base = BASE_PRICES[selections.service] || 200000;
-        const sizeMult = SIZE_MULT[selections.company_size] || 1;
+        const sizeFactor = companySizeFactor();
         const complexMult = COMPLEX_MULT[selections.complexity] || 1;
         const durationMult = DURATION_MULT[selections.duration] || 1;
         const addOns = computeAddOns();
-        const price = Math.round(base * sizeMult * complexMult * durationMult + addOns);
+        const price = Math.round(base * sizeFactor * complexMult * durationMult + addOns);
         calculatedPrice = price;
 
         const lang = (typeof getCurrentLang === 'function') ? getCurrentLang() : 'ru';
@@ -558,7 +619,7 @@
 
             const base = BASE_PRICES[selections.service] || 200000;
             const addOns = computeAddOns();
-            const price = Math.round(base * (SIZE_MULT[selections.company_size] || 1) * (COMPLEX_MULT[selections.complexity] || 1) * (DURATION_MULT[selections.duration] || 1) + addOns);
+            const price = Math.round(base * companySizeFactor() * (COMPLEX_MULT[selections.complexity] || 1) * (DURATION_MULT[selections.duration] || 1) + addOns);
             calculatedPrice = price;
 
             try {

@@ -619,6 +619,8 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'public', 'index.html')));
 app.get('/calculator', (req, res) => res.sendFile(path.join(__dirname, 'public', 'calculator.html')));
 app.get('/about', (req, res) => res.sendFile(path.join(__dirname, 'public', 'about.html')));
+app.get('/services', (req, res) => res.sendFile(path.join(__dirname, 'public', 'services.html')));
+app.get('/products', (req, res) => res.sendFile(path.join(__dirname, 'public', 'products.html')));
 app.get('/works', (req, res) => res.sendFile(path.join(__dirname, 'public', 'works.html')));
 app.get('/works/:slug', (req, res) => res.sendFile(path.join(__dirname, 'public', 'work.html')));
 app.get('/client/:slug', (req, res) => res.sendFile(path.join(__dirname, 'public', 'client.html')));
@@ -965,6 +967,44 @@ app.get('/api/pricing/calculator', withJsonCache(
         }
     }
 ));
+
+/* ── API: geo-lang (public) ─────────────────────────── */
+app.get('/api/geo-lang', (req, res) => {
+    let lang = 'ru';
+    const acceptLang = req.headers['accept-language'];
+    if (acceptLang) {
+        const preferred = acceptLang.split(',')[0].split('-')[0].toLowerCase();
+        if (['ru', 'en', 'ka', 'hy', 'bg'].includes(preferred)) {
+            lang = preferred;
+        } else if (acceptLang.includes('ru')) {
+            lang = 'ru';
+        } else if (acceptLang.includes('ka')) {
+            lang = 'ka';
+        } else if (acceptLang.includes('hy')) {
+            lang = 'hy';
+        } else if (acceptLang.includes('bg')) {
+            lang = 'bg';
+        } else if (acceptLang.includes('en')) {
+            lang = 'en';
+        }
+    }
+    const country = req.headers['cf-ipcountry'];
+    if (country) {
+        const c = country.toUpperCase();
+        if (['RU', 'BY', 'KZ', 'KG', 'UA', 'UZ', 'TJ', 'TM', 'MD'].includes(c)) {
+            lang = 'ru';
+        } else if (c === 'GE') {
+            lang = 'ka';
+        } else if (c === 'AM') {
+            lang = 'hy';
+        } else if (c === 'BG') {
+            lang = 'bg';
+        } else {
+            lang = 'en';
+        }
+    }
+    res.json({ lang });
+});
 
 /* ── API: i18n (public) ─────────────────────────────── */
 app.get('/api/i18n/:lang', withJsonCache(

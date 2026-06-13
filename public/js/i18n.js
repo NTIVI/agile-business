@@ -7,11 +7,11 @@ const I18N_REMOTE = { loaded: {}, dict: {} };
 
 /* ── Russian (Primary, Complete) ────────────────────── */
 I18N.ru = {
-    nav_about:'О нас', nav_works:'Наши работы', nav_articles:'Статьи', nav_services:'Услуги', nav_approach:'Подход', nav_contact:'Контакты', nav_cta:'Рассчитать проект',
+    nav_about:'О нас', nav_works:'Наши работы', nav_articles:'Статьи', nav_services:'Услуги', nav_products:'Продукты', nav_approach:'Подход', nav_contact:'Контакты', nav_cta:'Рассчитать проект',
     hero_badge:'Бизнес-консалтинг нового поколения',
     hero_title_1:'Решение', hero_title_2:'под задачи', hero_title_3:'бизнеса',
     hero_subtitle:'3 направления экспертизы для трансформации и масштабирования вашего бизнеса',
-    hero_btn_discuss:'Обсудить проект', hero_btn_services:'Наши услуги', hero_btn_contact:'Связаться',
+    hero_btn_discuss:'Обсудить проект', hero_btn_services:'Все услуги и цены', hero_btn_contact:'Связаться',
     about_label:'О компании', about_title_1:'Agile подход', about_title_2:'к вашему бизнесу',
     about_text:'Мы — команда экспертов, объединяющая аналитику, стратегию и технологии для решения самых сложных бизнес-задач. Наш подход основан на гибкости, данных и глубоком понимании рынка.',
     about_stat_1_label:'направлений\nэкспертизы', about_stat_2_label:'успешных\nпроектов', about_stat_3_label:'клиентов\nрекомендуют',
@@ -127,16 +127,49 @@ I18N.ru = {
     error_404_back:'На главную',
     trust_secure:'Надёжность',
     trust_fast:'Оперативность',
-    trust_quality:'Качество'
+    trust_quality:'Качество',
+    services_page_title:'Наши услуги — Agile Business',
+    services_page_label:'Наши услуги',
+    services_page_heading:'Ценники по направлениям',
+    services_page_intro:'Три направления экспертизы с прозрачными ценами. Точная стоимость зависит от сложности и масштаба — рассчитайте проект в калькуляторе.',
+    services_packages_title:'Пакетные предложения',
+    services_packages_sub:'Бизнес-аналитика — готовые наборы услуг со скидкой',
+    services_cta_calc:'Рассчитать стоимость проекта',
+    services_card_calc:'Рассчитать',
+    services_empty:'Скоро добавим ценники для этого направления.',
+    products_page_title:'Продукты — Agile Business',
+    products_page_label:'Продукты',
+    products_page_heading:'Решения для всей команды',
+    products_page_intro:'Внедряем готовые продукты Agile Business на весь персонал — под любую специфику и масштаб компании.',
+    products_cta:'Запросить внедрение',
+    product_call_title:'Agile Call',
+    product_call_desc:'Видеоконференции для команд: аналог МТС Линк и Яндекс Телемост. Созвоны с управлением участниками, субтитрами на экране и ИИ-отчётами по итогам встречи.',
+    product_call_features:'Создатель комнаты управляет микрофонами, камерами и демонстрацией экрана у всех участников|Речь отображается в чате и на веб-камере — ничего не теряется при сбоях микрофона или лагах|Триггер-слово: сохранение разговора, ИИ-отчёт и план действий в чате (второе слово — в разработке)|Адаптивный интерфейс для телефонов|Режимы показа камер: сетка, докладчик, карусель',
+    product_call_demo:'Попробовать демо',
+    product_kpi_title:'Agile KPI',
+    product_kpi_desc:'Система KPI для сотрудников и руководителей: дедлайны, качество сдачи, прозрачная оценка и бонусы.',
+    product_kpi_features:'KPI по срокам, качеству и ответственности|Контроль честности оценок руководителей|Учёт возвратов на доработку и уважительных причин|Дашборды для сотрудника, руководителя и владельца|Гибкая настройка под роли и отделы',
+    home_projects_label:'Продукты',
+    home_projects_title_1:'Наши',
+    home_projects_title_2:'решения',
+    home_projects_desc:'Готовые продукты Agile Business для всей команды — внедряем под вашу специфику и масштаб.',
+    home_products_all:'Все продукты',
+    home_products_more:'Подробнее',
+    home_call_feat_1:'Управление микрофонами, камерами и демонстрацией у всех участников',
+    home_call_feat_2:'Субтитры в чате и на экране — ничего не теряется при сбоях связи',
+    home_call_feat_3:'ИИ-отчёт по триггер-слову и режимы камер: сетка, докладчик, карусель',
+    home_kpi_feat_1:'KPI по срокам, качеству и ответственности',
+    home_kpi_feat_2:'Контроль честности оценок руководителей',
+    home_kpi_feat_3:'Дашборды для сотрудника, руководителя и владельца'
 };
 
 /* ── English (Complete) ─────────────────────────────── */
 I18N.en = {
-    nav_about:'About', nav_works:'Our work', nav_articles:'Articles', nav_services:'Services', nav_approach:'Approach', nav_contact:'Contact', nav_cta:'Calculate project',
+    nav_about:'About', nav_works:'Our work', nav_articles:'Articles', nav_services:'Services', nav_products:'Products', nav_approach:'Approach', nav_contact:'Contact', nav_cta:'Calculate project',
     hero_badge:'Next-generation business consulting',
     hero_title_1:'Solutions', hero_title_2:'for your', hero_title_3:'business',
     hero_subtitle:'3 areas of expertise to transform and scale your business',
-    hero_btn_discuss:'Discuss project', hero_btn_services:'Our services', hero_btn_contact:'Contact us',
+    hero_btn_discuss:'Discuss project', hero_btn_services:'All services & pricing', hero_btn_contact:'Contact us',
     about_label:'About us', about_title_1:'Agile approach', about_title_2:'to your business',
     about_text:'We are a team of experts combining analytics, strategy and technology to solve the most complex business challenges. Our approach is built on agility, data, and deep market understanding.',
     about_stat_1_label:'areas of\nexpertise', about_stat_2_label:'successful\nprojects', about_stat_3_label:'clients\nrecommend',
@@ -242,6 +275,39 @@ I18N.en = {
     ,trust_secure:'Reliability'
     ,trust_fast:'Responsiveness'
     ,trust_quality:'Quality'
+    ,services_page_title:'Our Services — Agile Business'
+    ,services_page_label:'Our services'
+    ,services_page_heading:'Pricing by direction'
+    ,services_page_intro:'Three areas of expertise with transparent pricing. Use the calculator for a tailored estimate.'
+    ,services_packages_title:'Package offers'
+    ,services_packages_sub:'Business analytics bundles with a discount'
+    ,services_cta_calc:'Calculate project cost'
+    ,services_card_calc:'Calculate'
+    ,services_empty:'Pricing for this direction will be added soon.'
+    ,products_page_title:'Products — Agile Business'
+    ,products_page_label:'Products'
+    ,products_page_heading:'Solutions for your whole team'
+    ,products_page_intro:'We deploy Agile Business products company-wide — for any industry and team size.'
+    ,products_cta:'Request deployment'
+    ,product_call_title:'Agile Call'
+    ,product_call_desc:'Video conferencing for teams — similar to MTS Link and Yandex Telemost. Host controls, on-screen captions, and AI meeting summaries.'
+    ,product_call_features:'Room host controls microphones, cameras, and screen sharing for all participants|Speech appears in chat and on webcam — nothing is lost during mic drops or lag|Trigger word: saves the conversation, AI report and action plan in chat (second word — coming soon)|Mobile-friendly interface|Camera layouts: grid, speaker, carousel'
+    ,product_call_demo:'Try demo'
+    ,product_kpi_title:'Agile KPI'
+    ,product_kpi_desc:'Employee KPI system: deadlines, quality, transparent scoring and bonuses for the whole team.'
+    ,product_kpi_features:'KPI for deadlines, quality and accountability|Manager scoring integrity controls|Rework returns and valid excuses tracking|Dashboards for employee, manager and owner|Flexible setup by roles and departments'
+    ,home_projects_label:'Products'
+    ,home_projects_title_1:'Our'
+    ,home_projects_title_2:'solutions'
+    ,home_projects_desc:'Ready-made Agile Business products for your whole team — tailored to your industry and scale.'
+    ,home_products_all:'All products'
+    ,home_products_more:'Learn more'
+    ,home_call_feat_1:'Host controls microphones, cameras and screen sharing for all participants'
+    ,home_call_feat_2:'Captions in chat and on screen — nothing lost during connection issues'
+    ,home_call_feat_3:'AI report via trigger word; camera layouts: grid, speaker, carousel'
+    ,home_kpi_feat_1:'KPI for deadlines, quality and accountability'
+    ,home_kpi_feat_2:'Manager scoring integrity controls'
+    ,home_kpi_feat_3:'Dashboards for employee, manager and owner'
     ,about_card_marketing:'We\'ll build a sales funnel, SEO and brand strategy for your business'
     ,mascot_greeting:'Hi! I\'m Agile — your business assistant!'
     ,mascot_tip_1:'Try the calculator — get a quote!'
@@ -376,6 +442,8 @@ function applyTranslations(lang) {
     // Update lang dropdown text
     var dd = document.querySelector('.lang-dropdown__current');
     if (dd) dd.textContent = (LANG_NAMES[lang] || lang).split(' ')[0];
+
+    document.dispatchEvent(new CustomEvent('ab:langchange', { detail: { lang: lang } }));
 }
 
 function getAvailableLanguages() {
@@ -416,18 +484,42 @@ function buildLangDropdown() {
     document.addEventListener('click', function() { wrapper.classList.remove('open'); });
 }
 
+function resolveInitialLang() {
+    var params = new URLSearchParams(window.location.search);
+    var urlLang = params.get('lang');
+    if (urlLang && LANG_NAMES[urlLang]) {
+        localStorage.setItem('ab_lang', urlLang);
+        if (window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', window.location.pathname + window.location.hash);
+        }
+        return Promise.resolve(urlLang);
+    }
+    if (localStorage.getItem('ab_lang')) return Promise.resolve(localStorage.getItem('ab_lang'));
+    return fetch('/api/geo-lang', { credentials: 'same-origin', cache: 'no-store' })
+        .then(function(r) { return r.ok ? r.json() : null; })
+        .then(function(d) {
+            if (d && d.lang && LANG_NAMES[d.lang]) {
+                localStorage.setItem('ab_lang', d.lang);
+                return d.lang;
+            }
+            return detectBrowserLang() || 'ru';
+        })
+        .catch(function() { return detectBrowserLang() || 'ru'; });
+}
+
 // Init
 document.addEventListener('DOMContentLoaded', function() {
-    var lang = getCurrentLang();
-    document.documentElement.setAttribute('lang', lang);
-    if (lang === 'he') document.documentElement.setAttribute('dir', 'rtl');
-    // Load extra language pack if needed, then remote overrides, then apply
-    var extraP = needsExtraLangs(lang) ? loadExtraLangs() : Promise.resolve();
-    extraP.then(function() {
-        return loadRemoteTranslations(lang);
-    }).then(function() {
-        applyTranslations(lang);
-        buildLangDropdown();
+    resolveInitialLang().then(function(lang) {
+        document.documentElement.setAttribute('lang', lang);
+        if (lang === 'he') document.documentElement.setAttribute('dir', 'rtl');
+        else document.documentElement.removeAttribute('dir');
+        var extraP = needsExtraLangs(lang) ? loadExtraLangs() : Promise.resolve();
+        return extraP.then(function() {
+            return loadRemoteTranslations(lang);
+        }).then(function() {
+            applyTranslations(lang);
+            buildLangDropdown();
+        });
     });
 });
 

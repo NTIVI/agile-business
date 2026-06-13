@@ -202,15 +202,21 @@
     }
 
     /* ── Smooth Anchor Scroll ────────────────────────── */
+    function scrollToHash(hash) {
+        if (!hash || hash === '#') return false;
+        const target = document.querySelector(hash);
+        if (!target) return false;
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return true;
+    }
     $$('a[href^="#"]').forEach(a => {
         a.addEventListener('click', e => {
-            const target = document.querySelector(a.getAttribute('href'));
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (scrollToHash(a.getAttribute('href'))) e.preventDefault();
         });
     });
+    if (window.location.hash) {
+        requestAnimationFrame(() => scrollToHash(window.location.hash));
+    }
 
     /* ── Scroll Reveal (IntersectionObserver) ──────────
        Важно: на /works и /articles карточки подгружаются после main.js (pages.js/articles.js).

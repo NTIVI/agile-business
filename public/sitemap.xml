@@ -2,67 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://agile-business-pro.com/</loc>
-        <lastmod>2026-04-30</lastmod>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://agile-business-pro.com/about</loc>
-        <lastmod>2026-04-30</lastmod>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://agile-business-pro.com/services</loc>
+        <lastmod>2026-06-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://agile-business-pro.com/products</loc>
+        <lastmod>2026-06-13</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://agile-business-pro.com/works</loc>
-        <lastmod>2026-04-30</lastmod>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://agile-business-pro.com/articles</loc>
-        <lastmod>2026-04-30</lastmod>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://agile-business-pro.com/calculator</loc>
-        <lastmod>2026-04-30</lastmod>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://agile-business-pro.com/works/vnutrennyaya-platforma-revolution-print</loc>
-        <lastmod>2026-04-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://agile-business-pro.com/works/mnogostranichnyy-sayt-aart-atelier</loc>
-        <lastmod>2026-04-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://agile-business-pro.com/works/mnogostranichnyy-sayt-boost-marin</loc>
-        <lastmod>2026-04-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://agile-business-pro.com/works/avtomatizatsiya-sayta</loc>
-        <lastmod>2026-04-30</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://agile-business-pro.com/articles/zachem-biznesu-sayt-esli-est-sotsseti-i-sarafanka</loc>
-        <lastmod>2026-04-30</lastmod>
+        <loc>https://agile-business-pro.com/articles/5-strategies-scaling-startup</loc>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://agile-business-pro.com/articles/zachem-biznesu-analitika-esli-vse-i-tak-rabotaet</loc>
-        <lastmod>2026-04-30</lastmod>
+        <loc>https://agile-business-pro.com/articles/digital-transformation-2026</loc>
+        <lastmod>2026-06-13</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
